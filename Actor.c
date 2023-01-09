@@ -1,7 +1,7 @@
 #include "Actor.h"
 
-void move(Actor* actor, unsigned short nx, unsigned short newy){
-        Object* tObject = &(*actor->object);
+void moveActor(Actor* actor, unsigned short nx, unsigned short ny){
+        Object* tObject = &(actor->object);
 
         tObject->x = nx;
         tObject->y = ny;

@@ -7,5 +7,5 @@ typedef struct Actor {
 	uint8_t stamina;
 } Actor;
 
-void move(Actor* actor, unsigned short nx, unsigned short newy);
+void moveActor(Actor* actor, unsigned short nx, unsigned short ny);
 
