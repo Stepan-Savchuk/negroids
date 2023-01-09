@@ -1,6 +1,8 @@
-typedef struct Actor{
+#include <stdint.h>
+
+typedef struct Object{
 	unsigned short x;
 	unsigned short y;
 
 	char sprite;
-} Actor;
+} Object;
