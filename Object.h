@@ -6,3 +6,8 @@ typedef struct Object{
 
 	char sprite;
 } Object;
+
+void destruct(void* object){
+	free(object);
+	object = NULL;
+}
