@@ -7,6 +7,6 @@ typedef struct Object{
 	char sprite;
 } Object;
 
-Object newObject(unsigned short x, unsigned short y, char sprite);
+Object* newObject(unsigned short x, unsigned short y, char sprite);
 
-void destruct(void* object);
+void destructObject(Object* object);
