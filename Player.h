@@ -5,3 +5,5 @@ typedef struct Player{
 
 	uint8_t bullets;
 } Player;
+
+Player initPlayer(unsigned short x, unsigned short y, char sprite, uint8_t health, uint8_t stamina, uint8_t bullets);
