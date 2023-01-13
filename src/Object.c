@@ -1,12 +1,12 @@
-#include "Object.h"
+#include "../include/Object.h"
 
-Object* newObject(unsigned short x, unsigned short y, char sprite){
+Object* newObject(unsigned short x, unsigned short y, size_t spriteIndex){
         Object* tObject = malloc(sizeof(Object));
 	
 	tObject->x = x;
 	tObject->y = y;
 	
-	tObject->sprite = sprite;
+	tObject->spriteIndex = spriteIndex;
         return tObject;
 }
 

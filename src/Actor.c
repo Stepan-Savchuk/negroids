@@ -1,9 +1,9 @@
-#include "Actor.h"
+#include "../include/Actor.h"
 
-Actor* newActor(unsigned short x, unsigned short y, char sprite, uint8_t health, uint8_t stamina){
+Actor* newActor(unsigned short x, unsigned short y, size_t spriteIndex, uint8_t health, uint8_t stamina){
         Actor* tActor = malloc(sizeof(Actor));
 	
-	Object* tObject = newObject(x, y, sprite);
+	Object* tObject = newObject(x, y, spriteIndex);
 	
 	tActor->object = tObject;
 	tActor->health = health;

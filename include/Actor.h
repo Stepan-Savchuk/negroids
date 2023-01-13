@@ -9,7 +9,7 @@ typedef struct Actor {
 	uint8_t stamina;
 } Actor;
 
-Actor* newActor(unsigned short x, unsigned short y, char sprite, uint8_t health, uint8_t stamina);
+Actor* newActor(unsigned short x, unsigned short y, size_t spriteIndex, uint8_t health, uint8_t stamina);
 
 void destructActor(Actor* actor);
 
