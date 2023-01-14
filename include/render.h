@@ -1,7 +1,9 @@
 #include<curses.h>
 
-char* tiles;
-
 void initTiles();
+
+void initScreen();
+
+void endScreen();
 
 char getTile(size_t index);
