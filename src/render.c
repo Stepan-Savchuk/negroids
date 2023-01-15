@@ -11,8 +11,12 @@ void initTiles(){
 
 void initScreen(){
 	window = initscr();
-	getmaxyx(window, rows, cols);
-	printf("lines = %d and cols = %d", rows, cols);
+
+	cbreak();
+        noecho();
+
+	clear();
+	refresh();
 }
 
 char getTile(size_t index){
@@ -20,6 +24,9 @@ char getTile(size_t index){
 }
 
 void endScreen(){
+	clear();
+	refresh();
+
 	endwin();
 	window = NULL;
 }

@@ -7,3 +7,5 @@ void initScreen();
 void endScreen();
 
 char getTile(size_t index);
+
+void drawTile();
