@@ -12,21 +12,31 @@ void initTiles(){
 void initScreen(){
 	window = initscr();
 
-	cbreak();
+	/*
+	cbreak();      Put this block into input.h later
         noecho();
-
+	*/
 	clear();
 	refresh();
 }
+
+void endScreen(){
+        clear();
+        refresh();
+
+        endwin();
+        window = NULL;
+}
+
 
 char getTile(size_t index){
 	return tiles[index];
 }
 
-void endScreen(){
-	clear();
-	refresh();
+void drawTile(char tile, int x, int y){
+	move(x, y);
+	
+	addch(tile);
 
-	endwin();
-	window = NULL;
+	refresh();
 }

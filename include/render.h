@@ -8,4 +8,4 @@ void endScreen();
 
 char getTile(size_t index);
 
-void drawTile();
+void drawTile(char tile, int x, int y);
