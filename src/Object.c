@@ -1,6 +1,6 @@
 #include "../include/Object.h"
 
-Object* newObject(unsigned short x, unsigned short y, size_t spriteIndex){
+Object* newObject(unsigned int x, unsigned int y, size_t spriteIndex){
         Object* tObject = malloc(sizeof(Object));
 	
 	tObject->x = x;

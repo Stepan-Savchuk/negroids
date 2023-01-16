@@ -6,6 +6,6 @@ typedef struct Player{
 	uint8_t bullets;
 } Player;
 
-Player* initPlayer(unsigned short x, unsigned short y, size_t spriteIndex, uint8_t health, uint8_t stamina, uint8_t bullets);
+Player* initPlayer(unsigned int x, unsigned int y, size_t spriteIndex, uint8_t health, uint8_t stamina, uint8_t bullets);
 
 void destructPlayer(Player* player);
