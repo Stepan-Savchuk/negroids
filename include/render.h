@@ -1,4 +1,4 @@
-#include<curses.h>
+#include "i_curses.h"
 
 void initTiles();
 

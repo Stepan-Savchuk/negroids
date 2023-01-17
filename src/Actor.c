@@ -17,6 +17,6 @@ void destructActor(Actor* actor){
 }
 
 void moveActor(Actor* actor, unsigned int nx, unsigned int ny){
-        actor->object->x = nx;
-        actor->object->y = ny;
+        actor->object->x += nx;
+        actor->object->y += ny;
 }

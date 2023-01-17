@@ -12,10 +12,6 @@ void initTiles(){
 void initScreen(){
 	window = initscr();
 
-	/*
-	cbreak();      Put this block into input.h later
-        noecho();
-	*/
 	clear();
 	refresh();
 }
