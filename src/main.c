@@ -5,21 +5,29 @@
 #include "../include/render.h"
 #include "../include/input.h"
 
-int main(){
-	Player* player = initPlayer(10, 10, 0, 3, 6, 6);
-	initScreen();
-	initInput();
-	while(true){
-		if(getch() == 'q') break;
-		else if(getch() == 'w') moveActor(player->actor, 0, -1);
-		else if(getch() == 's') moveActor(player->actor, 0, 1);
-		else if(getch() == 'd') moveActor(player->actor, 1, 0);
-		else if(getch() == 'a') moveActor(player->actor, -1, 0);
+Player* player;
 
-		clear();
-		drawTile(getTile(player->actor->object->spriteIndex), getPlayerX(player), getPlayerY(player));
-		refresh();
-	}
+void init(){
+	player = initPlayer(10, 10, 0, 3, 6, 6);
+        initScreen();                                                   initInput();
+	drawTile(getTile(player->actor->object->spriteIndex), getPlayerX(player), getPlayerY(player));
+}
+
+void mainLoop(){
+	while(true){
+               if(getch() == 'q') return;                                      else if(getch() == 'w') moveActor(player->actor,
+ 0, -1);                                                                       else if(getch() == 's') moveActor(player->actor,
+ 0, 1);                                                                        else if(getch() == 'd') moveActor(player->actor,
+ 1, 0);                                                                        else if(getch() == 'a') moveActor(player->actor,
+ -1, 0);                                                        
+               clear();
+               drawTile(getTile(player->actor->object->spriteIndex), getPlayerX(player), getPlayerY(player));                                 refresh();
+        }
+}
+
+int main(){
+	init();
+	mainLoop();
 	destructPlayer(player);
 	restoreInput();
 	endScreen();
