@@ -34,6 +34,4 @@ void drawTile(char tile, int x, int y){
 	move(x, y);
 	
 	addch(tile);
-
-	refresh();
 }
