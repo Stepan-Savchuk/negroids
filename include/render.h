@@ -1,7 +1,5 @@
 #include "i_curses.h"
 
-void initTiles();
-
 void initScreen();
 
 void endScreen();

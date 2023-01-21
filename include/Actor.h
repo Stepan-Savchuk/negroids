@@ -3,7 +3,7 @@
 #include "Object.h"
 
 typedef struct Actor {
-	Object* object;
+	Object* pObject;
 
 	uint8_t health;
 	uint8_t stamina;
@@ -11,7 +11,7 @@ typedef struct Actor {
 
 Actor* newActor(unsigned int x, unsigned int y, size_t spriteIndex, uint8_t health, uint8_t stamina);
 
-void destructActor(Actor* actor);
+void destructActor(Actor* pActor);
 
-void moveActor(Actor* actor, unsigned int nx, unsigned int ny);
+void moveActor(Actor* pActor, unsigned int nx, unsigned int ny);
 

@@ -10,6 +10,6 @@ Object* newObject(unsigned int x, unsigned int y, size_t spriteIndex){
         return tObject;
 }
 
-void destructObject(Object* object){
-	free(object);
+void destructObject(Object* pObject){
+	free(pObject);
 }

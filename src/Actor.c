@@ -5,18 +5,18 @@ Actor* newActor(unsigned int x, unsigned int y, size_t spriteIndex, uint8_t heal
 	
 	Object* tObject = newObject(x, y, spriteIndex);
 	
-	tActor->object = tObject;
+	tActor->pObject = tObject;
 	tActor->health = health;
 	tActor->stamina = stamina;
 
         return tActor;
 }
 
-void destructActor(Actor* actor){
-	free(actor);
+void destructActor(Actor* pActor){
+	free(pActor);
 }
 
-void moveActor(Actor* actor, unsigned int nx, unsigned int ny){
-        actor->object->x += nx;
-        actor->object->y += ny;
+void moveActor(Actor* pActor, unsigned int nx, unsigned int ny){
+        pActor->pObject->x += nx;
+        pActor->pObject->y += ny;
 }

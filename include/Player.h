@@ -1,7 +1,7 @@
 #include"Actor.h"
 
 typedef struct Player{
-	Actor* actor;
+	Actor* pActor;
 
 	uint8_t bullets;
 } Player;
@@ -13,3 +13,5 @@ void destructPlayer(Player* player);
 unsigned int getPlayerX(Player* player);
 
 unsigned int getPlayerY(Player* player);
+
+size_t getPlayerSprite(Player* player);

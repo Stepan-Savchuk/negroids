@@ -9,4 +9,4 @@ typedef struct Object{
 
 Object* newObject(unsigned int x, unsigned int y, size_t spriteIndex);
 
-void destructObject(Object* object);
+void destructObject(Object* pObject);

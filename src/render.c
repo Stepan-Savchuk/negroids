@@ -1,16 +1,10 @@
 #include "../include/render.h"
 
-char* tiles = "PN";
-WINDOW* window;
-int rows;
-int cols;
-
-void initTiles(){
-	
-}
+char* gTiles = "PN";
+WINDOW* gWindow;
 
 void initScreen(){
-	window = initscr();
+	gWindow = initscr();
 
 	clear();
 	refresh();
@@ -21,12 +15,12 @@ void endScreen(){
         refresh();
 
         endwin();
-        window = NULL;
+        gWindow = NULL;
 }
 
 
 char getTile(size_t index){
-	char tile = tiles[index];
+	char tile = gTiles[index];
 	return tile;
 }
 
