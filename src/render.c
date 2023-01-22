@@ -1,6 +1,6 @@
 #include "../include/render.h"
 
-char* gTiles = "PN";
+char* gTiles = "PN~";
 WINDOW* gWindow;
 
 void initScreen(){
