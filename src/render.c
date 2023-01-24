@@ -6,6 +6,8 @@ WINDOW* gWindow;
 void initScreen(){
 	gWindow = initscr();
 
+	start_color();
+
 	clear();
 	refresh();
 }
