@@ -26,8 +26,10 @@ char getTile(size_t index){
 	return tile;
 }
 
-void drawTile(char tile, int x, int y){
+void drawTile(char tile, int x, int y, bool isColor){
 	move(x, y);
 	
+	if(isColor) attron();
+
 	addch(tile);
 }
