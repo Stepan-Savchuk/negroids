@@ -12,7 +12,7 @@ Player* gPlayer;
 void init(){
 	gPlayer = initPlayer(10, 10, 0, 3, 6, 6);
         initScreen();                                                   initInput();
-	drawTile(getTile(gPlayer->pActor->pObject->spriteIndex), getPlayerX(gPlayer), getPlayerY(gPlayer));
+	drawTile(getTile(gPlayer->pActor->pObject->spriteIndex), getPlayerX(gPlayer), getPlayerY(gPlayer), 2);
 }
 
 int input(){
@@ -27,7 +27,7 @@ int input(){
 
 void render(){
 	clear();
-	drawTile(getTile(gPlayer->pActor->pObject->spriteIndex), getPlayerX(gPlayer), getPlayerY(gPlayer));
+	drawTile(getTile(gPlayer->pActor->pObject->spriteIndex), getPlayerX(gPlayer), getPlayerY(gPlayer), 2);
 	refresh();
 }
 

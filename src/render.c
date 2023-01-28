@@ -12,6 +12,10 @@ void initScreen(){
 	refresh();
 }
 
+void initColors(){
+	init_pair(1, COLOR_WHITE, COLOR_GREEN);
+}
+
 void endScreen(){
         clear();
         refresh();
@@ -26,10 +30,12 @@ char getTile(size_t index){
 	return tile;
 }
 
-void drawTile(char tile, int x, int y, bool isColor){
+void drawTile(char tile, int x, int y, short color){
 	move(x, y);
 	
-	if(isColor) attron();
+	if(color) attron(COLOR_PAIR(color));
 
 	addch(tile);
+
+	if(color) attron(COLOR_PAIR(color));
 }
