@@ -2,6 +2,8 @@
 
 void initScreen();
 
+void initColors();
+
 void endScreen();
 
 char getTile(size_t index);

@@ -13,7 +13,7 @@ void initScreen(){
 }
 
 void initColors(){
-	init_pair(1, COLOR_WHITE, COLOR_GREEN);
+	init_pair(1, COLOR_WHITE, COLOR_YELLOW);
 }
 
 void endScreen(){
