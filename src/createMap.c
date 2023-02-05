@@ -15,6 +15,36 @@ float interpolate(float min, float max, float w){
 	return (max - min) * ((w * (w * 6.0 - 15.0) + 10.0) * w*w*w) + min;
 }
 
+typedef struct Vector2 {
+	float x, y;
+} Vector2;
+
+Vector2 randomGradient(int x, int y){
+	const unsigned w = 8 * sizeof(unsigned);
+	const unsigned s = w / 2;
+	
+	unsigned a = x, b = y;
+	
+	a *= 3284157443;
+
+	b ^= a << s | a >> w-s;
+
+	b *= 1911520717;
+
+	a ^= b << s | b >> w-s;
+
+	a *= 2048419325;
+
+	float random = a * (3.14159265 /  ~(~0u >> 1));
+
+	Vector2 vector;
+	
+	vector.x = cos(random);
+	vector.y = sin(random);
+
+	return vector;
+}
+
 int main(){
 	FILE* map;
 	map = fopen("map.txt", "w");
@@ -25,6 +55,7 @@ int main(){
 
 	fclose(map);
 	//int rn = (rand() % (12 - 1 + 1)) + 1; formula from webto get random numbers in given range
-	printf("%f \n", interpolate(8.0, 32.0, 0.6));
+	Vector2 tv = randomGradient(120, 8);
+	printf("x = %f & y = %f \n", tv.x, tv.y);
 	return 0;
 }
