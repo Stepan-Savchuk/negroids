@@ -45,6 +45,15 @@ Vector2 randomGradient(int x, int y){
 	return vector;
 }
 
+float dotGridGradient(int ix, int iy, float fx, float fy){
+	Vector2 gradient = randomGradient(ix, iy);
+
+	float dx = fx - (float)ix;
+	float dy = fy - (float)iy;
+
+	return (dx*gradient.x + dy*gradient.y);
+}
+
 int main(){
 	FILE* map;
 	map = fopen("map.txt", "w");
