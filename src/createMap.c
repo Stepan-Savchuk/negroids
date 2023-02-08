@@ -27,11 +27,11 @@ Vector2 randomGradient(int x, int y){
 	
 	a *= 3284157443;
 
-	b ^= a << s | a >> w-s;
+	b ^= a << s | a >> (w-s);
 
 	b *= 1911520717;
 
-	a ^= b << s | b >> w-s;
+	a ^= b << s | b >> (w-s);
 
 	a *= 2048419325;
 
@@ -54,6 +54,31 @@ float dotGridGradient(int ix, int iy, float fx, float fy){
 	return (dx*gradient.x + dy*gradient.y);
 }
 
+float perlin(float x, float y){
+	int x0 = floor(x);
+	int x1 = x0 + 1;
+
+	int y0 = floor(y);
+	int y1 = y0 + 1;
+
+	float sx = x - ((float)x0);
+	float sy = y - ((float)y0);
+
+	float n0, n1, ix0, ix1, value;
+
+	n0 = dotGridGradient(x0, y0, x, y);
+	n1 = dotGridGradient(x1, y0, x, y);
+	ix0 = interpolate(n0, n1, sx);
+
+	n0 = dotGridGradient(x0, y1, x, y);
+	n1 = dotGridGradient(x1, y1, x, y);
+	ix1 = interpolate(n0, n1, sx);
+
+	value = interpolate(ix0, ix1, sy);
+
+	return value;
+}
+
 int main(){
 	FILE* map;
 	map = fopen("map.txt", "w");
@@ -64,7 +89,6 @@ int main(){
 
 	fclose(map);
 	//int rn = (rand() % (12 - 1 + 1)) + 1; formula from webto get random numbers in given range
-	Vector2 tv = randomGradient(120, 8);
-	printf("x = %f & y = %f \n", tv.x, tv.y);
+	printf("n = %f \n", perlin(160.0, 256.0));
 	return 0;
 }
