@@ -60,9 +60,17 @@ float perlin(float x, float y){
 
 	int y0 = floor(y);
 	int y1 = y0 + 1;
+	
+	float tx = (float) x0;
+	float ty = (float) y0;
 
-	float sx = x - ((float)x0);
-	float sy = y - ((float)y0);
+	float sx = x - tx;
+	float sy = y - ty;
+
+	if(sx == 0.0 && sy == 0.0) {
+		sx += 1 / x;
+		sy += 1 / y;
+	}
 
 	float n0, n1, ix0, ix1, value;
 
@@ -89,6 +97,6 @@ int main(){
 
 	fclose(map);
 	//int rn = (rand() % (12 - 1 + 1)) + 1; formula from webto get random numbers in given range
-	printf("n = %f \n", perlin(160.0, 256.0));
+	//printf("n = %f \n", perlin(0.0, 256.0)); for testing
 	return 0;
 }
