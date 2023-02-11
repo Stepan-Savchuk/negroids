@@ -87,16 +87,38 @@ float perlin(float x, float y){
 	return value;
 }
 
-int main(){
+void generateMap(){
 	FILE* map;
-	map = fopen("map.txt", "w");
-	
-	for(int i = 0; i < 10000; i++){
-		fputc('~', map);
-	}
+        map = fopen("map.txt", "w");
 
-	fclose(map);
+        for(int x = 0, y = 0; y <= 32; x++){
+		if(x >= 32){
+                        y++;
+                        x=0;
+                }
+
+		if(x <= 8){
+			fputc('~', map);
+			continue;
+		}
+
+		float perlinResult = perlin((float) x, (float) y);
+                if(perlinResult <= -0.1){
+			fputc('~', map);
+		}
+		else if(perlinResult >= -0.1 && perlinResult <= -0.05){
+			fputc('M', map);
+		}
+		else {
+			fputc('.', map);
+		}
+        }
+
+        fclose(map);
+}
+
+int main(){
+	generateMap();
 	//int rn = (rand() % (12 - 1 + 1)) + 1; formula from webto get random numbers in given range
-	//printf("n = %f \n", perlin(0.0, 256.0)); for testing
 	return 0;
 }
