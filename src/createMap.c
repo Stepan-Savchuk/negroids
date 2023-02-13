@@ -8,11 +8,11 @@ float interpolate(float min, float max, float w){
 
 //	interpolation funxtions which i took from wikipedia
 //	i use third one because it is said that it gives smoother step
-	return (max - min) * w + min;
+	//return (max - min) * w + min;
 
 	//return (max - min) * (3.0 - w * 2.0) * w*w + min;
 
-	//return (max - min) * ((w * (w * 6.0 - 15.0) + 10.0) * w*w*w) + min;
+	return (max - min) * ((w * (w * 6.0 - 15.0) + 10.0) * w*w*w) + min;
 }
 
 typedef struct Vector2 {
@@ -90,35 +90,34 @@ float perlin(float x, float y){
 void generateMap(){
 	FILE* map;
         map = fopen("map.txt", "w");
+	
+	int y = 35;
+	int x = 64;
 
-        for(int x = 0, y = 0; y < 35; x++){
+	int tx = floor(x / 2.0);
+	int ty = floor(y / 2.0);
+
+        /*for(int x = 0, y = 0; y < 35; x++){
 		if(x <= 8){
 			fputc('~', map);
 			continue;
 		}
 
-		float perlinResult = perlin((float) x, (float) y);
-                if(perlinResult <= -0.1){
-			fputc('~', map);
-		}
-		else if(perlinResult > -0.1 && perlinResult <= -0.05){
-			fputc('M', map);
-		}
-		else if(perlinResult >= 0.5){
-			fputc('T', map);
-		}
-		else if(perlinResult >= 0.1 && perlinResult < 0.5){
-			fputc('_', map);
-		}
-		else {
-			fputc('.', map);
+        }*/
+
+	for(int i = 0, j = 0; j < y; i++){
+		if(i > x){
+                        fputc('\n', map);
+                        j++;
+                        i = 0;
+                }
+		if(i == tx || j == ty){
+			fputc('*', map);
+			continue;
 		}
 
-		if(x >= 64){
-                        fputc('\n', map);                                               y++;
-                        x=0;
-                }
-        }
+		fputc(' ', map);
+	}
 
         fclose(map);
 }
