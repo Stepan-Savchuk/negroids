@@ -87,6 +87,13 @@ float perlin(float x, float y){
 	return value;
 }
 
+typedef struct Sector {
+	uint8_t x0;
+	uint8_t y0;
+	uint8_t x1;
+	uint8_t y1;
+} Sector;
+
 void generateMap(){
 	FILE* map;
         map = fopen("map.txt", "w");
@@ -94,8 +101,7 @@ void generateMap(){
 	int y = 35;
 	int x = 64;
 
-	int tx = floor(x / 2.0);
-	int ty = floor(y / 2.0);
+	//int direction = (rand() % (4 - 1 + 1)) + 1;
 
         /*for(int x = 0, y = 0; y < 35; x++){
 		if(x <= 8){
@@ -105,7 +111,7 @@ void generateMap(){
 
         }*/
 
-	for(int i = 0, j = 0; j < y; i++){
+	/*for(int i = 0, j = 0; j < y; i++){
 		if(i > x){
                         fputc('\n', map);
                         j++;
@@ -117,7 +123,7 @@ void generateMap(){
 		}
 
 		fputc(' ', map);
-	}
+	}*/
 
         fclose(map);
 }
