@@ -94,12 +94,34 @@ typedef struct Sector {
 	uint8_t y1;
 } Sector;
 
+void newSector(Sector* sector, uint8_t nx0, uint8_t ny0, uint8_t nx1, uint8_t ny1){
+	sector->x0 = nx0;
+	sector->y0 = ny0;
+	sector->x1 = nx1;
+	sector->y1 = ny1;
+}
+
 void generateMap(){
 	FILE* map;
         map = fopen("map.txt", "w");
 	
 	int y = 35;
 	int x = 64;
+
+	//int ty = floor(((float) y) / 2.0);
+	//int tx = floor(((float) x) / 2.0);
+
+	Sector sectors[4];
+
+	newSector(&sectors[0], 0, x, 0, y);
+
+	for(int i = 1; i < 4; i++){
+		int ty = floor(((float) sectors[i-1].y1) / 2.0);
+        	int tx = floor(((float) sectors[i-1].x1) / 2.0);
+		if((sectors[i-1].y1 - sectors[i-1].y0) < y){
+			newSector(&sectors[i], tx, x, sectors[i-1].y0, sectors[i-1].y1);
+		}	
+	}
 
 	//int direction = (rand() % (4 - 1 + 1)) + 1;
 
