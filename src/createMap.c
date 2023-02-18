@@ -118,9 +118,14 @@ void generateMap(){
 	for(int i = 1; i < 4; i++){
 		int ty = floor(((float) sectors[i-1].y1) / 2.0);
         	int tx = floor(((float) sectors[i-1].x1) / 2.0);
+
 		if((sectors[i-1].y1 - sectors[i-1].y0) < y){
 			newSector(&sectors[i], tx, x, sectors[i-1].y0, sectors[i-1].y1);
-		}	
+		}
+
+		if(i == 1 || (sectors[i-1].x1 - sectors[i-1].y0) < x){
+			newSector(&sectors[i], sectors[i-1].x0, sectors[i-1].x1, ty, y);
+		}
 	}
 
 	//int direction = (rand() % (4 - 1 + 1)) + 1;
