@@ -138,19 +138,19 @@ void generateMap(){
 
         }*/
 
-	/*for(int i = 0, j = 0; j < y; i++){
+	for(int i = 0, j = 0; j <= y; i++){
 		if(i > x){
                         fputc('\n', map);
                         j++;
                         i = 0;
                 }
-		if(i == tx || j == ty){
+		if(i ==  || j == ){
 			fputc('*', map);
 			continue;
 		}
 
 		fputc(' ', map);
-	}*/
+	}
 
         fclose(map);
 }
