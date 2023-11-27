@@ -1,5 +1,3 @@
-#include "i_curses.h"
-
 void initScreen();
 
 void initColors();
