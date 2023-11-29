@@ -1,4 +1,4 @@
-enum Sector {
+enum SectorID {
 	//8
 	NORTHF,
 	NORTH,
@@ -9,3 +9,10 @@ enum Sector {
 	SOUTH,
 	SOUTHF
 };
+
+typedef struct Sector {
+	enum SectorID;
+	int buildLimit;
+	//TODO Resources limit
+	Building buildings[buildLimit];
+} Sector;

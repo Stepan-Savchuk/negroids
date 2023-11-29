@@ -22,6 +22,9 @@ void render(){
 }
 
 void mainLoop(){
+	while(true){
+
+	}
 }
 
 void end(){
