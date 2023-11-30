@@ -1,6 +1,9 @@
 #include "Sector.h"
 
 typedef struct Slave {
+	int id;
+	char* name;
+
 	short health;
         short stamina;
         short mental;
