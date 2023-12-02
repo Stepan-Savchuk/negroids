@@ -1,15 +1,15 @@
 enum BuildingID {
 	FARM_FIELD,
-	MINE,
-	STONE_MINE,
 	MILL,
-	SAWMILL,
+	MINE,
 	SMITHY,
-	//Будівля для обробки каменю
+	STONE_MINE,
+	QUARRY
+	SAWMILL
 };
 
 typedef struct Building {
-	short ; //type of building
+	enum BuildingID id; //type of building
 	char* title;
 	int cost;
 	short level;

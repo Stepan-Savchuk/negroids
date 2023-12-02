@@ -14,5 +14,5 @@ typedef struct Slave {
 	short beauty;
 	short spec;
 
-        enum Sector cSector;
+        enum SectorID cSector;
 } Slave;

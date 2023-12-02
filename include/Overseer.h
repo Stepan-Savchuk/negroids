@@ -9,5 +9,5 @@ typedef struct Overseer {
         short hunger;
         short ammo;
 
-        enum Sector cSector;
+        enum SectorID cSector;
 } Overseer;

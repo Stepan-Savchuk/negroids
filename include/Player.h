@@ -7,5 +7,8 @@ typedef struct Player {
 	short hunger;
 	short ammo;
 
-	enum Sector cSector;
+	int resources;
+	int bResources; //resources for building
+
+	enum SectorID cSector;
 } Player;
