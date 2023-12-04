@@ -13,4 +13,5 @@ typedef struct Building {
 	char* title;
 	int cost;
 	short level;
+	int profit;
 } Building;

@@ -12,13 +12,13 @@ enum SectorID {
 
 typedef struct Sector {
 	enum SectorID id;
-	int buildLimit;
 	//TODO Resources limit
 	//buildLimit = 10 / (woodLimit+stoneLimit+flandsLimit
 	//TODO добуті ресурси 2ох категорій: придатні і не придатні для будівництва
-	int cWood;
-	int cStone;
-	int cMetal;
-	int flandsLimit;
-	Building buildings[buildLimit];
+	int cWood = NULL;
+	int cStone = NULL;
+	int cMetal = NULL;
+	int flandsLimit = NULL;
+	int buildLimit = 10 / (woodLimit + stoneLimit +flandsLimit);
+	Building* buildings = (Building*) malloc(sizeof(Building) * buildLimit);
 } Sector;
