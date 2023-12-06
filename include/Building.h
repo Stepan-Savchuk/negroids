@@ -12,6 +12,5 @@ typedef struct Building {
 	enum BuildingID id; //type of building
 	char* title;
 	int cost;
-	short level;
-	int profit;
+	//int profit;
 } Building;
