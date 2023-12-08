@@ -34,5 +34,8 @@ typedef struct Sector {
 	int IVbBuilds;
 	
 	//buildTypeArray??ID??[dynamicbuildLimit] = {1, 10, 20, 30, 400};
-	//I can also make some cash variable????
+	//I can also make some cashe variable????
+	//
+	//Я хуй його знає. що робити?масиви чи змінні? по
+	//факту то є пофіг. але тоді виходить що дуже багато змінних. Може зробити union? Вповні можливо
 } Sector;
