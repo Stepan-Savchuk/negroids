@@ -1,4 +1,4 @@
-enum BuildingID {
+typedef enum {
 	FARM_FIELD,
 	MILL,
 	MINE,
@@ -6,7 +6,7 @@ enum BuildingID {
 	STONE_MINE,
 	QUARRY
 	SAWMILL
-};
+} BuildingID;
 
 typedef struct Building {
 	enum BuildingID id; //type of building
@@ -17,3 +17,7 @@ typedef struct Building {
 	int profit;
 	short level;
 } Building;
+
+Building* newBuilding(BuildingID nid, char* ntitle, int ncost, int nprofit, short nlevel);
+
+void delBuilding(Building* building);
