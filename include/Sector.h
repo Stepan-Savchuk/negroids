@@ -22,18 +22,11 @@ typedef struct Sector {
 	int buildLimit = 10 / (cWood + cStone +flandsLimit);
 	int rBuildLimit = (cStone + cMetal);//builds<=rBuildLimit
 	
-	
-	int IBuilds;
-	int IIBuilds;
-	int IIIBuilds;
-	int IVBuilds;
+	Building* cBuildings = (Building*) malloc(sizeof(Building) * buildLimit);
 
-	int IbBuilds;
-	int IIbBuilds;
-	int IIIbBuilds;
-	int IVbBuilds;
-	
-	//buildTypeArray??ID??[dynamicbuildLimit] = {1, 10, 20, 30, 400};
+	Building* crBuildings = (Building*) malloc(sizeof(Building) * rBuildLimit);
+
+
 	//I can also make some cashe variable????
 	//
 	//Я хуй його знає. що робити?масиви чи змінні? по
