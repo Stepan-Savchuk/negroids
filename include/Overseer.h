@@ -9,5 +9,7 @@ typedef struct Overseer {
         short hunger;
         short ammo;
 
-        enum SectorID cSector;
+        SectorID cSector;
 } Overseer;
+
+//TODO make up some functions besides con/de-structors and g/s-etters for em

@@ -1,4 +1,4 @@
-enum SectorID {
+typedef enum {
 	//8
 	NORTHF,
 	NORTH,
@@ -8,13 +8,10 @@ enum SectorID {
 	EASTF,
 	SOUTH,
 	SOUTHF
-};
+} SectorID;
 
 typedef struct Sector {
-	enum SectorID id;
-	//TODO Resources limit
-	//buildLimit = 10 / (woodLimit+stoneLimit+flandsLimit
-	//TODO добуті ресурси 2ох категорій: придатні і не придатні для будівництва
+	SectorID id;
 	int cWood = NULL;
 	int cStone = NULL;
 	int cMetal = NULL;
