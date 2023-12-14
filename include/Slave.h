@@ -23,9 +23,30 @@ void delSlave(Slave* slave);
 
 //TODO getters and setters ... not to forget about id and name
 
-short getSlaveHealth(Slave slave);                      void setSlaveHealth(Slave* slave, short nhealth);
+int getSlaveID(Slave slave);
+void setSlaveID(Slave* slave, short nid);
+
+char* getSlaveName(Slave slave);
+void setSlaveName(Slave* slave, nname);
+
+short getSlaveHealth(Slave slave);
+void setSlaveHealth(Slave* slave, short nhealth);
                                                            short getSlaveStamina(Slave slave);
-void setSlaveStamina(Slave* slave, short nstamina);                                                                short getSlaveMental(Slave slave);                      void setSlaveMental(Slave* slave, short nmental);
+void setSlaveStamina(Slave* slave, short nstamina);        
+
+short getSlaveMental(Slave slave);
+void setSlaveMental(Slave* slave, short nmental);
 
 short getSlaveHunger(Slave slave);
 void setSlaveHunger(Slave* slave, short nhunger);
+
+short getSlaveHorny(Slave slave);
+void setSlaveHorny(Slave* slave, short nhorny);
+
+short getSlaveStrength(Slave slave);
+void setSlaveStrength(Slave* slave, short nhunger);
+
+//TODO Rest of getters/setters
+
+SectorID getSlaveCSector(Slave slave);
+void setSlaveCSector(Slave* slave, SectorID ncSector);
