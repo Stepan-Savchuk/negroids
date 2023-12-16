@@ -1,5 +1,15 @@
 #include "Sector.h"
 
+typedef enum {
+	FARMER,
+	MILLER,
+	MINER,
+	SMITH,
+	STONE_CUTTER,
+	QUARRER,//??
+	SAWMILLER
+} SpecID;
+
 typedef struct Slave {
 	int id;
 	char* name;
@@ -12,16 +22,15 @@ typedef struct Slave {
 	short strength;
 	short speed;
 	short beauty;
-	short spec;
+	
+	SpecID spec;
 
         SectorID cSector;
 } Slave;
 
-Slave* newSlave(int nid, char* nname, short nhealth, short nstamina, short nmental, short nhunger, short nhorny, short nstrength, short nspeed, short nbeauty, short nspec, SectorID ncSector);
+Slave* newSlave(int nid, char* nname, short nhealth, short nstamina, short nmental, short nhunger, short nhorny, short nstrength, short nspeed, short nbeauty, SpecID nspec, SectorID ncSector);
 
 void delSlave(Slave* slave);
-
-//TODO getters and setters ... not to forget about id and name
 
 int getSlaveID(Slave slave);
 void setSlaveID(Slave* slave, short nid);
@@ -46,7 +55,14 @@ void setSlaveHorny(Slave* slave, short nhorny);
 short getSlaveStrength(Slave slave);
 void setSlaveStrength(Slave* slave, short nhunger);
 
-//TODO Rest of getters/setters
+short getSlaveSpeed(Slave slave);
+void setSlaveSpeed(Slave* slave, short nspeed);
+
+short getSlaveBeauty(Slave slave);
+void setSlaveBeauty(Slave* slave, short nbeauty);
+
+short getSlaveSpec(Slave slave);
+void setSlaveSpec(Slave* slave, SpecID nspec);
 
 SectorID getSlaveCSector(Slave slave);
 void setSlaveCSector(Slave* slave, SectorID ncSector);
