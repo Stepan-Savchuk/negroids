@@ -21,3 +21,6 @@ typedef struct Building {
 Building* newBuilding(BuildingID nid, char* ntitle, int ncost, int nprofit, short nlevel);
 
 void delBuilding(Building* building);
+
+short getBuildingLevel(Building building);
+void setBuildingLevel(Building* building, short nlevel);
