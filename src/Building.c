@@ -1,12 +1,16 @@
 #include "../include/Building.h"
 
 Building* newBuilding(BuildingID nid, char* ntitle, int ncost, int nprofit, short nlevel){
+	Building* pBuilding = (Building*) malloc(sizeof(Building));
+
 	Building tBuilding = {nid, ntitle, ncost, nprofit, nlevel};
-	return &tBuilding;
+
+	pBuilding = &tBuilding;
+	return pBuilding;
 }
 
-void delBuilding(Building* building){
-	*building = {NULL, NULL, NULL, NULL, NULL};
+void delBuilding(Building *building){
+	free(building);
 	building = NULL;
 }
 

@@ -6,28 +6,42 @@
 #include "../include/render.h"
 #include "../include/input.h"
 
+#include "../include/Building.h"
+
 void initRender(){
-	initScreen();
+	//initScreen();
 }
 
 void init(){
-	initRender();
-	initInput();
+	//initRender();
+	//initInput();
 }
 
 int input(){
+	return 0;
 }
 
 void render(){
 }
 
 void mainLoop(){
-	while(true){
+	/*while(true){
 
-	}
+	}*/
 }
 
 void end(){
+}
+
+
+void test(){
+	Building tBuild = *newBuilding(MINE, "MINE", 100, 1, 1);
+	int tl = getBuildingLevel(tBuild);
+	printf("Test Level1 = %d", tl);
+
+	delBuilding(&tBuild);
+
+	printf("Test Level1 = %d", tl);
 }
 
 int main(){
@@ -35,6 +49,8 @@ int main(){
 	init();
 
 	mainLoop();
+
+	test();
 
 	end();
 
