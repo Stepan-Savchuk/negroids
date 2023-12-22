@@ -3,9 +3,12 @@
 Building* newBuilding(BuildingID nid, char* ntitle, int ncost, int nprofit, short nlevel){
 	Building* pBuilding = (Building*) malloc(sizeof(Building));
 
-	Building tBuilding = {nid, ntitle, ncost, nprofit, nlevel};
+	pBuilding->id = nid;
+	pBuilding->title = ntitle;
+	pBuilding->cost = ncost;
+	pBuilding->profit = nprofit;
+	pBuilding->level = nlevel;
 
-	pBuilding = &tBuilding;
 	return pBuilding;
 }
 

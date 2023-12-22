@@ -41,7 +41,8 @@ void test(){
 
 	delBuilding(tBuild);
 
-	printf("Test Level1 = %d", tl);
+	tl = getBuildingLevel(*tBuild);
+        printf("Test Level1 = %d", tl);
 }
 
 int main(){
