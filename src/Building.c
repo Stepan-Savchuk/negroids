@@ -12,9 +12,9 @@ Building* newBuilding(BuildingID nid, char* ntitle, int ncost, int nprofit, shor
 	return pBuilding;
 }
 
-void delBuilding(Building* building){
-	free(building);
-	building = NULL;
+void delBuilding(Building** building){
+	free(*building);
+	*building = NULL;
 }
 
 short getBuildingLevel(Building building){

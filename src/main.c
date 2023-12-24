@@ -35,14 +35,6 @@ void end(){
 
 
 void test(){
-	Building* tBuild = newBuilding(MINE, "MINE", 100, 1, 1);
-	int tl = getBuildingLevel(*tBuild);
-	printf("Test Level1 = %d", tl);
-
-	delBuilding(tBuild);
-
-	tl = getBuildingLevel(*tBuild);
-        printf("Test Level1 = %d", tl);
 }
 
 int main(){
