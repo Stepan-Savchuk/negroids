@@ -1,15 +1,15 @@
 #include "../include/Building.h"
 
 Building* newBuilding(BuildingID nid, char* ntitle, int ncost, int nprofit, short nlevel){
-	Building* pBuilding = (Building*) malloc(sizeof(Building));
+	Building* building = (Building*) malloc(sizeof(Building));
 
-	pBuilding->id = nid;
-	pBuilding->title = ntitle;
-	pBuilding->cost = ncost;
-	pBuilding->profit = nprofit;
-	pBuilding->level = nlevel;
+	building->id = nid;
+	building->title = ntitle;
+	building->cost = ncost;
+	building->profit = nprofit;
+	building->level = nlevel;
 
-	return pBuilding;
+	return building;
 }
 
 void delBuilding(Building** building){

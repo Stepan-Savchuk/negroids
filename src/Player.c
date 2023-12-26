@@ -2,30 +2,68 @@
 
 //TODO define functions below
 
-Player* initPlayer(short nhealth, short nstamina, short nmental, short nhunger, short nammo, SectorID ncsector);
+Player* initPlayer(short nhealth, short nstamina, short nmental, short nhunger, short nammo, SectorID ncsector){
+	Player* player = (Player*) malloc(sizeof(Player));
+	
+	player->health = nhealth;
+	player->stamina = nstamina;
+	player->mental = nmental;
+	player->hunger = nhunger;
+	player->ammo = nammo;
+	player->cSector = ncsector;
 
-void delPlayer(Player** player);
+	return player;
+}
 
-short getPlayerHealth(Player player);
+void delPlayer(Player** player){
+	free(*player);
+	*player = NULL;
+}
 
-void setPlayerHealth(Player* player, short nhealth);
+short getPlayerHealth(Player player){
+	return player.health;
+}
 
-short getPlayerStamina(Player player);
+void setPlayerHealth(Player* player, short nhealth){
+	player->health = nhealth;
+}
 
-void setPlayerStamina(Player* player, short nstamina);
+short getPlayerStamina(Player player){
+	return player.stamina;
+}
 
-short getPlayerMental(Player player);
+void setPlayerStamina(Player* player, short nstamina){
+	player->stamina = nstamina;
+}
 
-void setPlayerMental(Player* player, short nmental);
+short getPlayerMental(Player player){
+	return player.mental;
+}
 
-short getPlayerHunger(Player player);
+void setPlayerMental(Player* player, short nmental){
+	player->mental = nmental;
+}
 
-void setPlayerHunger(Player* player, short nhunger);
+short getPlayerHunger(Player player){
+	return player.hunger;
+}
 
-short getPlayerAmmo(Player player);
+void setPlayerHunger(Player* player, short nhunger){
+	player->hunger = nhunger;
+}
 
-void setPlayerAmmo(Player* player, short nammo);
+short getPlayerAmmo(Player player){
+	return player.ammo;
+}
 
-SectorID getPlayerCSector(Player player);
+void setPlayerAmmo(Player* player, short nammo){
+	player->ammo = nammo;
+}
 
-void setPlayerCSector(Player* player, SectorID ncSector);
+SectorID getPlayerCSector(Player player){
+	return player.SectorID;
+}
+
+void setPlayerCSector(Player* player, SectorID ncsector){
+	player->cSector = ncsector;
+}

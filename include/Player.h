@@ -30,4 +30,4 @@ short getPlayerAmmo(Player player);
 void setPlayerAmmo(Player* player, short nammo);
 
 SectorID getPlayerCSector(Player player);
-void setPlayerCSector(Player* player, SectorID ncSector);
+void setPlayerCSector(Player* player, SectorID ncsector);
