@@ -61,7 +61,7 @@ void setPlayerAmmo(Player* player, short nammo){
 }
 
 SectorID getPlayerCSector(Player player){
-	return player.SectorID;
+	return player.cSector;
 }
 
 void setPlayerCSector(Player* player, SectorID ncsector){

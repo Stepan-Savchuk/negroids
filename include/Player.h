@@ -7,7 +7,7 @@ typedef struct Player {
 	short hunger;
 	short ammo;
 
-	enum SectorID cSector;
+	SectorID cSector;
 } Player;
 
 Player* initPlayer(short nhealth, short nstamina, short nmental, short nhunger, short nammo, SectorID ncsector);

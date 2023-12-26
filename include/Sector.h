@@ -1,3 +1,5 @@
+#include "Building.h"
+
 typedef enum {
 	//8
 	NORTHF,
@@ -12,16 +14,16 @@ typedef enum {
 
 typedef struct Sector {
 	SectorID id;
-	int cWood = NULL;
-	int cStone = NULL;
-	int cMetal = NULL;
-	int cFlands = NULL;
-	int buildLimit = 10 / (cWood + cStone +flandsLimit);
-	int rBuildLimit = (cStone + cMetal);//builds<=rBuildLimit
+	int cWood;
+	int cStone;
+	int cMetal;
+	int cFlands;
+	int buildLimit;
+	int rBuildLimit;
 	
-	Building* cBuildings = (Building*) malloc(sizeof(Building) * buildLimit);
+	//Building* cBuildings = (Building*) malloc(sizeof(Building) * buildLimit);
 
-	Building* crBuildings = (Building*) malloc(sizeof(Building) * rBuildLimit);
+	//Building* crBuildings = (Building*) malloc(sizeof(Building) * rBuildLimit);
 
 
 	//I can also make some cashe variable????

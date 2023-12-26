@@ -7,6 +7,7 @@
 #include "../include/input.h"
 
 #include "../include/Building.h"
+#include "../include/Player.h"
 
 void initRender(){
 	//initScreen();
