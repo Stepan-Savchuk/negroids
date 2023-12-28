@@ -17,13 +17,16 @@ typedef struct Sector {
 	int cWood;
 	int cStone;
 	int cMetal;
-	int cFlands;
+	int flands;
 	int buildLimit;
-	int rBuildLimit;
+	int metalBuildLimit;
+	int flandsBuildLimit;
 	
-	//Building* cBuildings = (Building*) malloc(sizeof(Building) * buildLimit);
+	Building* cBuildings;
 
-	//Building* crBuildings = (Building*) malloc(sizeof(Building) * rBuildLimit);
+	Building* cMetalBuildings;
+
+	Building* cFlandsBuildLimit;
 
 
 	//I can also make some cashe variable????
@@ -31,3 +34,6 @@ typedef struct Sector {
 	//Я хуй його знає. що робити?масиви чи змінні? по
 	//факту то є пофіг. але тоді виходить що дуже багато змінних. Може зробити union? Вповні можливо
 } Sector;
+
+Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nflands);
+void delSector(Sector** sector);

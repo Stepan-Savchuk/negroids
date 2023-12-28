@@ -1,7 +1,5 @@
 #include "../include/Player.h"
 
-//TODO define functions below
-
 Player* initPlayer(short nhealth, short nstamina, short nmental, short nhunger, short nammo, SectorID ncsector){
 	Player* player = (Player*) malloc(sizeof(Player));
 	
