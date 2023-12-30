@@ -7,9 +7,25 @@ Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nfland
 	int tmetalBuildLimit = ncmetal / 100;
 	int tflandsBuildLimit = ncflands / 100;
 
-	//Sector* tSector = (Sector*) malloc(sizeof(Sector) + sizeof(Building*) * (tBuildLimit+tmetalBuildLimit+tflandsBuildLimit));
-	//TODO : change Sector structure Building pointers to just links in structure and then create separate method which initializes those dynamic arrays for Buildings.
+	Building* tBuildings = (Building*) malloc(sizeof(Building) * tBuildLimit);
+	Building* tmetalBuildings = (Building*) malloc(sizeof(Building) * tmetalBuildLimit);
+	Building* tflandsBuildings = (Building*) malloc(sizeof(Building) * tflandsBuildLimit);
 
+	Sector* tSector = (Sector*) malloc(sizeof(Sector));
+
+	tSector->id = nid;
+	tSector->cWood = ncwood;
+	tSector->cStone = ncstone;
+	tSector->cMetal = ncmetal;
+	tSector->flands = nflands;
+	tSector->buildLimit = tBuildLimit;
+	tSector->metalBuildLimit = tmetalBuildLimit;
+	tSector->flandsBuildLimit = tflandsBuildLimit;
+	tSector->buildings = tBuildings;
+	tSector->metalBuildings = tmetalBuildings;
+	tSector->flandsBuildings = tflandsBuildings;
+
+	return tSector;
 }
 
 void delSector(Sector** sector){}

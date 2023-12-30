@@ -22,11 +22,11 @@ typedef struct Sector {
 	int metalBuildLimit;
 	int flandsBuildLimit;
 	
-	Building* cBuildings;
+	Building* buildings;
 
-	Building* cMetalBuildings;
+	Building* metalBuildings;
 
-	Building* cFlandsBuildLimit;
+	Building* flandsBuildings;
 
 
 	//I can also make some cashe variable????
