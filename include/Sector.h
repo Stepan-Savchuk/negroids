@@ -27,13 +27,12 @@ typedef struct Sector {
 	Building* metalBuildings;
 
 	Building* flandsBuildings;
-
-
-	//I can also make some cashe variable????
-	//
-	//Я хуй його знає. що робити?масиви чи змінні? по
-	//факту то є пофіг. але тоді виходить що дуже багато змінних. Може зробити union? Вповні можливо
 } Sector;
 
 Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nflands);
 void delSector(Sector** sector);
+
+void reallocBuildLimit(Sector* sector);
+
+//TODO : 1.Functions of adding and removing Buildings to list
+//	 2.Functios of getting of resources profit

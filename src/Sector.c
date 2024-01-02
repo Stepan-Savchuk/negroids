@@ -28,4 +28,24 @@ Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nfland
 	return tSector;
 }
 
-void delSector(Sector** sector){}
+void delSector(Sector** sector){
+	free(*sector->buildings);
+	*sector->buildings = NULL;
+	free(*sector->metalBuildings);
+	*sector->metalBuildings = NULL;
+	free(*sector->flandsBuildings);
+	*sector->flandsBuildings = NULL;
+	
+	free(*sector);
+	*sector = NULL;
+}
+
+void reallocBuildLimit(Sector* sector){
+	sector->buildLimit = 100 / (sector->cWood + sector->cStone + sector->cMetal + sector->flands);
+	sector->metalBuildLimit = sector->cMetal / 10;
+	sector->flandsBuildLimit = sector->flands / 10;
+
+	sector->buildings = (Building*) realloc(sector->buildings, sizeof(Building) * sector->buildLimit);
+	sector->metalBuildings = (Building*) realloc(sector->metalBuildings, sizeof(Building) * sector->metalBuildLimit);
+	sector->flandsBuildings = (Building*) realloc(sector->flandsBuildings, sizeof(Building) * sector->flandsBuildLimit);
+}
