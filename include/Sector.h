@@ -34,5 +34,12 @@ void delSector(Sector** sector);
 
 void reallocBuildLimit(Sector* sector);
 
-//TODO : 1.Functions of adding and removing Buildings to list
-//	 2.Functios of getting of resources profit
+void addBuilding(Sector* sector, Building building);
+void removeBuilding(Sector* sector, /*type of building*/, /*level of building*/);
+
+void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel);
+
+int getProfit(Sector* sector);
+int getStoneProfit(Sector* sector);
+int getMetalProfit(Sector* sector);
+int getWoodProfit(Sector* sector);

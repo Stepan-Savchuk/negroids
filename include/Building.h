@@ -7,7 +7,6 @@ typedef enum {
 	MILL,
 	MINE,
 	SMITHY,
-	STONE_MINE,
 	QUARRY,
 	SAWMILL
 } BuildingID;
