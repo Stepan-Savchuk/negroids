@@ -35,7 +35,7 @@ void delSector(Sector** sector);
 void reallocBuildLimit(Sector* sector);
 
 void addBuilding(Sector* sector, Building building);
-void removeBuilding(Sector* sector, /*type of building*/, /*level of building*/);
+void removeBuilding(Sector* sector, BuildingID id, short level);
 
 void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel);
 

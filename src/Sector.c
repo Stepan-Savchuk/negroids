@@ -49,3 +49,15 @@ void reallocBuildLimit(Sector* sector){
 	sector->metalBuildings = (Building*) realloc(sector->metalBuildings, sizeof(Building) * sector->metalBuildLimit);
 	sector->flandsBuildings = (Building*) realloc(sector->flandsBuildings, sizeof(Building) * sector->flandsBuildLimit);
 }
+
+void addBuilding(Sector* sector, Building building){
+}
+
+void removeBuilding(Sector* sector, BuildingID id, short level);
+
+void upgradeBuilding(Sector* sector, Building id, short baseLevel);
+
+int getProfit();
+int getStoneProfit();
+int getMetalProfit();
+int getWoodProfit();
