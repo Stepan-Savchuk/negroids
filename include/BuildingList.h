@@ -3,10 +3,11 @@
 typedef struct BuildingList {
 	Building* array;
 	int size;
-	int lindex;
+	int index;
+	int last;
 } List;
 
-BuildingList newBuildingList(int nsize);
+BuildingList* newBuildingList(int nsize);
 void delBuildingList(BuildingList** buildingList);
 
 void addBuilding(BuildingList* buildingList, Building building);
