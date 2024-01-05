@@ -51,6 +51,8 @@ void reallocBuildLimit(Sector* sector){
 }
 
 void addBuilding(Sector* sector, Building building){
+	//START
+	
 }
 
 void removeBuilding(Sector* sector, BuildingID id, short level);

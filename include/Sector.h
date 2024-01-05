@@ -1,4 +1,5 @@
 #include "Building.h"
+#include "BuildingList.h"
 
 typedef enum {
 	//8
@@ -22,11 +23,11 @@ typedef struct Sector {
 	int metalBuildLimit;
 	int flandsBuildLimit;
 	
-	Building* buildings;
+	BuildingList buildings;
 
-	Building* metalBuildings;
+	BuildingList metalBuildings;
 
-	Building* flandsBuildings;
+	BuildingList flandsBuildings;
 } Sector;
 
 Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nflands);
@@ -39,7 +40,7 @@ void removeBuilding(Sector* sector, BuildingID id, short level);
 
 void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel);
 
-int getProfit(Sector* sector);
+int getWheatProfit(Sector* sector);
 int getStoneProfit(Sector* sector);
 int getMetalProfit(Sector* sector);
 int getWoodProfit(Sector* sector);
