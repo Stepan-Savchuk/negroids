@@ -11,6 +11,6 @@ BuildingList* newBuildingList(int nsize);
 void delBuildingList(BuildingList** buildingList);
 
 void addBuilding(BuildingList* buildingList, Building building);
-void removeBuilding(BuildingList** buildingList, BuildingID id, short level);
+void removeBuilding(BuildingList* buildingList, BuildingID id, short level);
 
-int getProfit(BuildingList buildingList);
+Building* getBuildingbyIndex(int index);
