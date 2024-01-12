@@ -4,6 +4,7 @@ typedef struct BuildingList {
 	Building* array;
 	int size;
 	int index;
+	//Do I need this when I have size variable?
 	int last;
 } List;
 

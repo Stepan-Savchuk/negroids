@@ -17,11 +17,23 @@ void delBuildingList(BuildingList** buildingList){
 
 void addBuilding(BuildingList* buildingList, Building building){
 	buildingList->array[buildingList->index] = building;
-	if(buildingList->index == buildingList->last){buildingList->last++}
+	if(buildingList->index == buildingList->last){
+		buildingList->last++
+	}
+	
 	buildingList->index++;
 
 }
 
 void removeBuilding(BuildingList* buildingList, BuildingID id, short level){
 	//TODO : algorithm to find suitable element starting from end
+	
+	Building* tArray = buildingList->array;
+	int tSize = buildingList->size;
+	int tIndex = buildingList->index;
+	int tLast = buildingList->last;
+
+	for(int i = tSize-1; i >= 0; i---){
+		
+	}
 }
