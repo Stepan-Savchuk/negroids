@@ -25,6 +25,8 @@ void addBuilding(BuildingList* buildingList, Building building){
 
 }
 
+//FUCK. What if I only make two levels of buildings ant thus will make it more efficient to just make variables of buildings amount?
+
 void removeBuilding(BuildingList* buildingList, BuildingID id, short level){
 	//TODO : algorithm to find suitable element starting from end
 	
@@ -33,7 +35,16 @@ void removeBuilding(BuildingList* buildingList, BuildingID id, short level){
 	int tIndex = buildingList->index;
 	int tLast = buildingList->last;
 
-	for(int i = tSize-1; i >= 0; i---){
-		
+	for(int i = tLast; i >= 0; i--){
+		//I want to break free
+		if(tArray[i].id == id && tArray[i].level == level){
+			tArray[i] = NULL;
+			
+			if(i == tLast) buildingList->last -= 1;
+			buildingList->index = i;
+
+			break;
+
+		}
 	}
 }
