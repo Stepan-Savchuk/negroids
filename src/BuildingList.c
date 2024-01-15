@@ -2,7 +2,6 @@
 
 BuildingList* newBuildingList(int nsize){
 	BuildingList* tList = (BuildingList*) malloc(sizeof(BuildingList)+sizeof(Building)*nsize);
-	tList->array = tArray;
 	tList->size = nsize;
 	tList->index = 0;
 	tList->last = 0;
@@ -28,8 +27,6 @@ void addBuilding(BuildingList* buildingList, Building building){
 //FUCK. What if I only make two levels of buildings ant thus will make it more efficient to just make variables of buildings amount?
 
 void removeBuilding(BuildingList* buildingList, BuildingID id, short level){
-	//TODO : algorithm to find suitable element starting from end
-	
 	Building* tArray = buildingList->array;
 	int tSize = buildingList->size;
 	int tIndex = buildingList->index;
@@ -47,4 +44,13 @@ void removeBuilding(BuildingList* buildingList, BuildingID id, short level){
 
 		}
 	}
+}
+
+void reallocBuildingList(BuildingList* buildingList, int nsize){
+	//This function only increases memory amount for structure
+	realloc(buildingList, (BuildingList*) malloc(sizeof(BuildingList)+sizeof(Building)*nsize));
+}
+
+Building* getBuildingByIndex(BuildingList buildingList, int index){
+	return buildingList.array[index];
 }

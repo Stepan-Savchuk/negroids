@@ -14,4 +14,6 @@ void delBuildingList(BuildingList** buildingList);
 void addBuilding(BuildingList* buildingList, Building building);
 void removeBuilding(BuildingList* buildingList, BuildingID id, short level);
 
-Building* getBuildingbyIndex(int index);
+void reallocBuildingList(BuildingList* buildingList);
+
+Building* getBuildingByIndex(BuildingList buildingList, int index);
