@@ -14,6 +14,6 @@ void delBuildingList(BuildingList** buildingList);
 void addBuilding(BuildingList* buildingList, Building building);
 void removeBuilding(BuildingList* buildingList, BuildingID id, short level);
 
-void reallocBuildingList(BuildingList* buildingList);
+void reallocBuildingList(BuildingList* buildingList/*should have added value of size to which I wanna set dat list*/);
 
 Building* getBuildingByIndex(BuildingList buildingList, int index);

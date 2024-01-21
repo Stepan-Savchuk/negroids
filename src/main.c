@@ -43,6 +43,12 @@ Building bSawmill = {SAWMILL, "Sawmill", 25, 25, 1};
 
 
 void test(){
+	//TODO : Test dit freacking functions
+	BuildingList* pBuildingList = newBuildingList(1);
+	addBuilding(pBuildingList, bMill);
+	removeBuilding(pBuildingList, MILL, 1);
+	reallocBuildingList(BuildingList* pbuildingList/*new size of dit list?*/);
+	//getBuildingByIndex(pBuildingList, 0);
 }
 
 int main(){
