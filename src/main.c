@@ -7,6 +7,7 @@
 #include "../include/input.h"
 
 #include "../include/Building.h"
+#include "../include/BuildingList.h"
 #include "../include/Player.h"
 
 void initRender(){
@@ -46,9 +47,11 @@ void test(){
 	//TODO : Test dit freacking functions
 	BuildingList* pBuildingList = newBuildingList(1);
 	addBuilding(pBuildingList, bMill);
+	Building tBuilding = getBuildingByIndex(pBuildingList, 0);
+	printf("Test building ID = %d", getBuildingID(tBuildingID));
 	removeBuilding(pBuildingList, MILL, 1);
-	reallocBuildingList(BuildingList* pbuildingList/*new size of dit list?*/);
-	//getBuildingByIndex(pBuildingList, 0);
+	printf("Test building ID = %d", getBuildingID(tBuildingID));
+	reallocBuildingList(BuildingList* pbuildingList, 2);
 }
 
 int main(){

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Building.h"
 
 typedef struct BuildingList {
@@ -6,7 +8,7 @@ typedef struct BuildingList {
 	int index;
 	//Do I need this when I have size variable? YES, cause size of array may be higher than amount of filled elements
 	int last;
-} List;
+} BuildingList;
 
 BuildingList* newBuildingList(int nsize);
 void delBuildingList(BuildingList** buildingList);
