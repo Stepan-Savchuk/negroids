@@ -46,12 +46,12 @@ Building bSawmill = {SAWMILL, "Sawmill", 25, 25, 1};
 void test(){
 	//TODO : Test dit freacking functions
 	BuildingList* pBuildingList = newBuildingList(1);
-	addBuilding(pBuildingList, bMill);
-	Building tBuilding = getBuildingByIndex(pBuildingList, 0);
-	printf("Test building ID = %d", getBuildingID(tBuildingID));
-	removeBuilding(pBuildingList, MILL, 1);
-	printf("Test building ID = %d", getBuildingID(tBuildingID));
-	reallocBuildingList(BuildingList* pbuildingList, 2);
+	addBuildingBL(pBuildingList, bMill);
+	Building tBuilding = getBuildingByIndex(*pBuildingList, 0);
+	printf("Test building ID = %d", getBuildingID(tBuilding));
+	removeBuildingBL(pBuildingList, MILL, 1);
+	printf("Test building ID = %d", getBuildingID(tBuilding));
+	reallocBuildingList(pBuildingList, 2);
 }
 
 int main(){

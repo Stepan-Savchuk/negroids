@@ -13,9 +13,9 @@ typedef struct BuildingList {
 BuildingList* newBuildingList(int nsize);
 void delBuildingList(BuildingList** buildingList);
 
-void addBuilding(BuildingList* buildingList, Building building);
-void removeBuilding(BuildingList* buildingList, BuildingID id, short level);
+void addBuildingBL(BuildingList* buildingList, Building building);
+void removeBuildingBL(BuildingList* buildingList, BuildingID id, short level);
 
-void reallocBuildingList(BuildingList* buildingList/*should have added value of size to which I wanna set dat list*/);
+void reallocBuildingList(BuildingList* buildingList, int nsize);
 
-Building* getBuildingByIndex(BuildingList buildingList, int index);
+Building getBuildingByIndex(BuildingList buildingList, int index);

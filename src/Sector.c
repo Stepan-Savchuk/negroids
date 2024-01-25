@@ -50,12 +50,12 @@ void reallocBuildLimit(Sector* sector){
 	sector->flandsBuildings = (Building*) realloc(sector->flandsBuildings, sizeof(Building) * sector->flandsBuildLimit);
 }
 
-void addBuilding(Sector* sector, Building building){
+void addBuildingS(Sector* sector, Building building){
 	//START
 	
 }
 
-void removeBuilding(Sector* sector, BuildingID id, short level);
+void removeBuildingS(Sector* sector, BuildingID id, short level);
 
 void upgradeBuilding(Sector* sector, Building id, short baseLevel);
 

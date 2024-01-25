@@ -14,10 +14,10 @@ void delBuildingList(BuildingList** buildingList){
 }
 
 
-void addBuilding(BuildingList* buildingList, Building building){
+void addBuildingBL(BuildingList* buildingList, Building building){
 	buildingList->array[buildingList->index] = building;
 	if(buildingList->index == buildingList->last){
-		buildingList->last++
+		buildingList->last++;
 	}
 	
 	buildingList->index++;
@@ -26,7 +26,7 @@ void addBuilding(BuildingList* buildingList, Building building){
 
 //FUCK. What if I only make two levels of buildings ant thus will make it more efficient to just make variables of buildings amount?
 
-void removeBuilding(BuildingList* buildingList, BuildingID id, short level){
+void removeBuildingBL(BuildingList* buildingList, BuildingID id, short level){
 	Building* tArray = buildingList->array;
 	int tSize = buildingList->size;
 	int tIndex = buildingList->index;
@@ -35,7 +35,7 @@ void removeBuilding(BuildingList* buildingList, BuildingID id, short level){
 	for(int i = tLast; i >= 0; i--){
 		//I want to break free
 		if(tArray[i].id == id && tArray[i].level == level){
-			tArray[i] = NULL;
+			tArray[i] = {};
 			
 			if(i == tLast) buildingList->last -= 1;
 			buildingList->index = i;

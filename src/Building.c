@@ -17,6 +17,10 @@ void delBuilding(Building** building){
 	*building = NULL;
 }
 
+BuildingID getBuildingID(Building building){
+	return building.id;
+}
+
 short getBuildingLevel(Building building){
 	return building.level;
 }
