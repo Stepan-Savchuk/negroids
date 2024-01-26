@@ -1,5 +1,7 @@
 #include "../include/BuildingList.h"
 
+static const Building nullBuilding;
+
 BuildingList* newBuildingList(int nsize){
 	BuildingList* tList = (BuildingList*) malloc(sizeof(BuildingList)+sizeof(Building)*nsize);
 	tList->size = nsize;
@@ -35,7 +37,7 @@ void removeBuildingBL(BuildingList* buildingList, BuildingID id, short level){
 	for(int i = tLast; i >= 0; i--){
 		//I want to break free
 		if(tArray[i].id == id && tArray[i].level == level){
-			tArray[i] = {};
+			tArray[i] = nullBuilding;
 			
 			if(i == tLast) buildingList->last -= 1;
 			buildingList->index = i;
@@ -48,7 +50,7 @@ void removeBuildingBL(BuildingList* buildingList, BuildingID id, short level){
 
 void reallocBuildingList(BuildingList* buildingList, int nsize){
 	//This function only increases memory amount for structure
-	realloc(buildingList, (BuildingList*) malloc(sizeof(BuildingList)+sizeof(Building)*nsize));
+	realloc(buildingList, sizeof(BuildingList)+sizeof(Building)*nsize);
 }
 
 Building* getBuildingByIndex(BuildingList buildingList, int index){
