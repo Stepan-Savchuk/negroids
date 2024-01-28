@@ -50,9 +50,9 @@ void removeBuildingBL(BuildingList* buildingList, BuildingID id, short level){
 
 void reallocBuildingList(BuildingList* buildingList, int nsize){
 	//This function only increases memory amount for structure
-	realloc(buildingList, sizeof(BuildingList)+sizeof(Building)*nsize);
+	buildingList = realloc(buildingList, sizeof(BuildingList)+sizeof(Building)*nsize);
 }
 
-Building* getBuildingByIndex(BuildingList buildingList, int index){
+Building getBuildingByIndex(BuildingList buildingList, int index){
 	return buildingList.array[index];
 }

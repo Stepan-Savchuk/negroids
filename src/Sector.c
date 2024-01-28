@@ -3,13 +3,17 @@
 Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nflands){
 	//100 is aproximate value
 
-	int tBuildLimit = 100 / (ncwood + ncstone + ncmetal + ncflands);
+	int tBuildLimit = 100 / (ncwood + ncstone + ncmetal + nflands);
 	int tmetalBuildLimit = ncmetal / 100;
-	int tflandsBuildLimit = ncflands / 100;
+	int tflandsBuildLimit = nflands / 100;
 
+
+	/*
 	Building* tBuildings = (Building*) malloc(sizeof(Building) * tBuildLimit);
 	Building* tmetalBuildings = (Building*) malloc(sizeof(Building) * tmetalBuildLimit);
 	Building* tflandsBuildings = (Building*) malloc(sizeof(Building) * tflandsBuildLimit);
+	*/
+
 
 	Sector* tSector = (Sector*) malloc(sizeof(Sector));
 
@@ -21,9 +25,11 @@ Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nfland
 	tSector->buildLimit = tBuildLimit;
 	tSector->metalBuildLimit = tmetalBuildLimit;
 	tSector->flandsBuildLimit = tflandsBuildLimit;
-	tSector->buildings = tBuildings;
-	tSector->metalBuildings = tmetalBuildings;
-	tSector->flandsBuildings = tflandsBuildings;
+	
+	tSector->buildings = newBuildingList(tBuildLimit);
+	
+	tSector->metalBuildings = newBuildingList(tmetalBuildLimit);
+	tSector->flandsBuildings = newBuildingList(tflandsBuildLimit);
 
 	return tSector;
 }
