@@ -35,12 +35,21 @@ Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nfland
 }
 
 void delSector(Sector** sector){
-	free(*sector->buildings);
-	*sector->buildings = NULL;
-	free(*sector->metalBuildings);
-	*sector->metalBuildings = NULL;
-	free(*sector->flandsBuildings);
-	*sector->flandsBuildings = NULL;
+	/*BuildingList* tBuildings = *sector.buildings;
+	BuildingList* tMetalBuildings = *sector.metalBuildings;
+	BuildingList* tFLandsBuildings = *sector.flandsBuildings;
+	*/
+
+	Sector* tSector = *sector;
+
+	BuildingList* tBuildings = tSector->buildings;
+	BuildingList* tMetalBuildings = tSector->metalBuildings;
+	BuildingList* tFLandsBuildings = tSector->flandsBuildings;
+
+	delBuildingList(&tBuildings);
+	delBuildingList(&tMetalBuildings);
+	delBuildingList(&tFLandsBuildings);
+	
 	
 	free(*sector);
 	*sector = NULL;
@@ -51,9 +60,9 @@ void reallocBuildLimit(Sector* sector){
 	sector->metalBuildLimit = sector->cMetal / 10;
 	sector->flandsBuildLimit = sector->flands / 10;
 
-	sector->buildings = (Building*) realloc(sector->buildings, sizeof(Building) * sector->buildLimit);
-	sector->metalBuildings = (Building*) realloc(sector->metalBuildings, sizeof(Building) * sector->metalBuildLimit);
-	sector->flandsBuildings = (Building*) realloc(sector->flandsBuildings, sizeof(Building) * sector->flandsBuildLimit);
+	sector->buildings = (BuildingList*) realloc(sector->buildings, sizeof(BuildingList) + sizeof(Building) * sector->buildLimit);
+	sector->metalBuildings = (BuildingList*) realloc(sector->metalBuildings, sizeof(BuildingList) + sizeof(Building) * sector->metalBuildLimit);
+	sector->flandsBuildings = (BuildingList*) realloc(sector->flandsBuildings, sizeof(BuildingList) + sizeof(Building) * sector->flandsBuildLimit);
 }
 
 void addBuildingS(Sector* sector, Building building){
@@ -63,9 +72,9 @@ void addBuildingS(Sector* sector, Building building){
 
 void removeBuildingS(Sector* sector, BuildingID id, short level);
 
-void upgradeBuilding(Sector* sector, Building id, short baseLevel);
+void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel);
 
-int getProfit();
-int getStoneProfit();
-int getMetalProfit();
-int getWoodProfit();
+int getWheatProfit(Sector sector);
+int getStoneProfit(Sector sector);
+int getMetalProfit(Sector sector);
+int getWoodProfit(Sector sector);

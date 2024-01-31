@@ -23,11 +23,11 @@ typedef struct Sector {
 	int metalBuildLimit;
 	int flandsBuildLimit;
 	
-	BuildingList buildings;
+	BuildingList* buildings;
 
-	BuildingList metalBuildings;
+	BuildingList* metalBuildings;
 
-	BuildingList flandsBuildings;
+	BuildingList* flandsBuildings;
 } Sector;
 
 Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nflands);
@@ -40,7 +40,7 @@ void removeBuildingS(Sector* sector, BuildingID id, short level);
 
 void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel);
 
-int getWheatProfit(Sector* sector);
-int getStoneProfit(Sector* sector);
-int getMetalProfit(Sector* sector);
-int getWoodProfit(Sector* sector);
+int getWheatProfit(Sector sector);
+int getStoneProfit(Sector sector);
+int getMetalProfit(Sector sector);
+int getWoodProfit(Sector sector);
