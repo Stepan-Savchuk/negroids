@@ -15,7 +15,7 @@ void delBuildingList(BuildingList** buildingList){
 	*buildingList = NULL;
 }
 
-
+//TODO : Think about allocating array member of this structure seperately
 void addBuildingBL(BuildingList* buildingList, Building building){
 	buildingList->array[buildingList->index] = building;
 	if(buildingList->index == buildingList->last){
