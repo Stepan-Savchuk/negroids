@@ -18,4 +18,8 @@ void removeBuildingBL(BuildingList* buildingList, BuildingID id, short level);
 
 void reallocBuildingList(BuildingList* buildingList, int nsize);
 
+int getBuildingListSize(BuildingList buildingList){
+  return buildingList.size;
+}
+
 Building getBuildingByIndex(BuildingList buildingList, int index);

@@ -1,4 +1,5 @@
 #include "../include/BuildingList.h"
+#include <stdlib.h>
 
 static const Building nullBuilding;
 
@@ -61,7 +62,7 @@ void removeBuildingBL(BuildingList* buildingList, BuildingID id, short level){
 void reallocBuildingList(BuildingList* buildingList, int nsize){
 	//This function only increases memory amount for structure
 	//TODO : Finish this shit	
-	buildingList
+	buildingList->array = realloc(buildingList->array, sizeof(Building)*nsize);
 	buildingList = realloc(buildingList, sizeof(BuildingList));
 }
 
