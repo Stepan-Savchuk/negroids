@@ -3,7 +3,11 @@
 static const Building nullBuilding;
 
 BuildingList* newBuildingList(int nsize){
-	BuildingList* tList = (BuildingList*) malloc(sizeof(BuildingList)+sizeof(Building)*nsize);
+	Building* tArray = (Building*) malloc(sizeof(Building) * nsize);
+
+	BuildingList* tList = (BuildingList*) malloc(sizeof(BuildingList));
+
+	tList->array = tArray;
 	tList->size = nsize;
 	tList->index = 0;
 	tList->last = 0;
@@ -11,6 +15,12 @@ BuildingList* newBuildingList(int nsize){
 }
 
 void delBuildingList(BuildingList** buildingList){
+	BuildingList* tBuildingList = *buildingList;
+
+	Building* tArray = tBuildingList->array;
+
+	delBuilding(&tArray);
+
 	free(*buildingList);
 	*buildingList = NULL;
 }
@@ -50,7 +60,9 @@ void removeBuildingBL(BuildingList* buildingList, BuildingID id, short level){
 
 void reallocBuildingList(BuildingList* buildingList, int nsize){
 	//This function only increases memory amount for structure
-	buildingList = realloc(buildingList, sizeof(BuildingList)+sizeof(Building)*nsize);
+	//TODO : Finish this shit	
+	buildingList
+	buildingList = realloc(buildingList, sizeof(BuildingList));
 }
 
 Building getBuildingByIndex(BuildingList buildingList, int index){
