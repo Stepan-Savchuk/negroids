@@ -66,6 +66,10 @@ void reallocBuildingList(BuildingList* buildingList, int nsize){
 	buildingList = realloc(buildingList, sizeof(BuildingList));
 }
 
+int getBuildingListSize(BuildingList buildingList){
+  return buildingList.size;
+}
+
 Building getBuildingByIndex(BuildingList buildingList, int index){
 	return buildingList.array[index];
 }
