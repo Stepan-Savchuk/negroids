@@ -26,7 +26,6 @@ void delBuildingList(BuildingList** buildingList){
 	*buildingList = NULL;
 }
 
-//TODO : Think about allocating array member of this structure seperately
 void addBuildingBL(BuildingList* buildingList, Building building){
 	buildingList->array[buildingList->index] = building;
 	if(buildingList->index == buildingList->last){
@@ -61,7 +60,6 @@ void removeBuildingBL(BuildingList* buildingList, BuildingID id, short level){
 
 void reallocBuildingList(BuildingList* buildingList, int nsize){
 	//This function only increases memory amount for structure
-	//TODO : Finish this shit	
 	buildingList->array = realloc(buildingList->array, sizeof(Building)*nsize);
 	buildingList = realloc(buildingList, sizeof(BuildingList));
 }

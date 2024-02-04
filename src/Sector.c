@@ -66,13 +66,28 @@ void reallocBuildLimit(Sector* sector){
 }
 
 void addBuildingS(Sector* sector, Building building){
-	//START
-	
+  if (building.id == 0) {
+    addBuildingBL(sector->flandsBuildings, building);
+  } else if (building.id == 2) {
+    addBuildingBL(sector->metalBuildings, building);
+  } else if (building.id == 1 || building.id > 2) {
+    addBuildingBL(sector->buildings, building);
+  }
 }
 
-void removeBuildingS(Sector* sector, BuildingID id, short level);
+void removeBuildingS(Sector* sector, BuildingID id, short level){
+	if (id == 0) {
+    removeBuildingBL(sector->flandsBuildings, id, level);
+  } else if (id == 2) {
+    removeBuildingBL(sector->metalBuildings, id, level);
+  } else if (id == 1 || id > 2) {
+    removeBuildingBL(sector->buildings, id, level);
+  }
+}
 
-void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel);
+void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel){
+  //TODO : Start dis shit
+}
 
 int getWheatProfit(Sector sector);
 int getStoneProfit(Sector sector);
