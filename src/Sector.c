@@ -86,7 +86,15 @@ void removeBuildingS(Sector* sector, BuildingID id, short level){
 }
 
 void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel){
-  //TODO : Start dis shit
+  //TODO : Finish dis shit
+
+  if (id == 0) {
+    
+  } else if (id == 2) {
+  
+  } else if (id == 1 || id > 2) {
+  
+  }
 }
 
 int getWheatProfit(Sector sector);

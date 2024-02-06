@@ -22,3 +22,6 @@ int getBuildingListSize(BuildingList buildingList);
 
 
 Building getBuildingByIndex(BuildingList buildingList, int index);
+void upgradeBuildingByIndex(BuildingList* buildingList, int index);
+
+int getIndexofBuilding(BuildingList buildingList, BuildingID id, short level);

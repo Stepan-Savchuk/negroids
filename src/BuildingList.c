@@ -71,3 +71,16 @@ int getBuildingListSize(BuildingList buildingList){
 Building getBuildingByIndex(BuildingList buildingList, int index){
 	return buildingList.array[index];
 }
+
+void upgradeBuildingByIndex(BuildingList* buildingList, int index){
+  buildingList->array[index].level++;
+}
+
+int getIndexofBuilding(BuildingList buildingList, BuildingID id, short level){
+  for (int i = 0; i <= buildingList.last; i++) {
+    if (buildingList.array[i].id == id && buildingList.array[i].level == level) {
+      return i;
+    }
+  }
+  return -1;
+}
