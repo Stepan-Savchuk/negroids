@@ -73,7 +73,9 @@ Building getBuildingByIndex(BuildingList buildingList, int index){
 }
 
 void upgradeBuildingByIndex(BuildingList* buildingList, int index){
-  buildingList->array[index].level++;
+  Building* tBuilding = &buildingList->array[index];
+  short tLevel = getBuildingLevel(*tBuilding);
+  setBuildingLevel(tBuilding, tLevel++);
 }
 
 int getIndexofBuilding(BuildingList buildingList, BuildingID id, short level){

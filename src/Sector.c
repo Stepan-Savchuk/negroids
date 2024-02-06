@@ -86,14 +86,12 @@ void removeBuildingS(Sector* sector, BuildingID id, short level){
 }
 
 void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel){
-  //TODO : Finish dis shit
-
   if (id == 0) {
-    
+    upgradeBuildingByIndex(sector->flandsBuildings, getIndexofBuilding(*sector->flandsBuildings, id, baseLevel));
   } else if (id == 2) {
-  
+    upgradeBuildingByIndex(sector->flandsBuildings, getIndexofBuilding(*sector->metalBuildings, id, baseLevel)); 
   } else if (id == 1 || id > 2) {
-  
+    upgradeBuildingByIndex(sector->flandsBuildings, getIndexofBuilding(*sector->buildings, id, baseLevel));
   }
 }
 
