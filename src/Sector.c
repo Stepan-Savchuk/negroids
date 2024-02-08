@@ -95,7 +95,18 @@ void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel){
   }
 }
 
-int getWheatProfit(Sector sector);
-int getStoneProfit(Sector sector);
-int getMetalProfit(Sector sector);
-int getWoodProfit(Sector sector);
+// TODO : Thosr are temporal values before I make a formula
+
+int getWheatProfit(Sector sector){
+  return sector.flands;
+}
+
+int getStoneProfit(Sector sector){
+  return sector.cStone;
+}
+int getMetalProfit(Sector sector){
+  return sector.cMetal;
+}
+int getWoodProfit(Sector sector){
+  return sector.cWood;
+}
