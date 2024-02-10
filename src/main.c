@@ -1,4 +1,3 @@
-#include <cinttypes>
 #include <stdio.h>
 #include <unistd.h>
 
@@ -43,38 +42,44 @@ Building bQuarry = {QUARRY, "Quarry", 25, 25, 1};
 Building bSawmill = {SAWMILL, "Sawmill", 25, 25, 1};
 
 
-void test(){
-  Sector* tSector = newSector(HOME, 100, 50, 25, 200);
+/* Build Limit for metal buildings =  sector.metal /1000
+ * Build Limit for fertile lands = sector.flands / 1000
+ * Build Limit for other buildings = 5000/ 1(metal + flands + wood + stone)*/
 
-  printf("Test0: Wheat profit = %d", getWheatProfit(*tSector));
+void test(){
+  Sector* tSector = newSector(HOME, 750, 500, 250, 500);
+
+  printf("Test0: Wheat profit = %d \n", getWheatProfit(*tSector));
 
   addBuildingS(tSector, bFarmField);
   addBuildingS(tSector, bQuarry);
-  printf("TEST1");
-  printf("TEST1");
+  printf("Building0 ID = %d \n", getBuildingID(getBuildingByIndex(*tSector->flandsBuildings, 0)));
+  printf("Building1 ID = %d \n", getBuildingID(getBuildingByIndex(*tSector->buildings, 1)));
 
-  //TODO : I need to properly define formulas of build limit or change values in the test call or Sectpr constructor
 
-  //Changint of buildLimit here
+  printf("Build Limit0 = %d \n", tSector->buildLimit);
+  tSector->cWood = 0;
   reallocBuildLimit(tSector);
-  printf("TEST2");
+  printf("Build Limit1 = %d \n", tSector->buildLimit);
 
   removeBuildingS(tSector, FARM_FIELD, 1);
-  printf("TEST3");
+  printf("Building0 ID = %d \n", getBuildingID(getBuildingByIndex(*tSector->flandsBuildings, 0)));
 
-  addBuildingS(tSector, bMine);
-  printf("TEST4");
+  addBuildingS(tSector, bMill);
+  int tIndex = getIndexofBuilding(*tSector->buildings, MILL, 1);
+  printf("BuildingN ID = %d and its position = %d \n", getBuildingID(getBuildingByIndex(*tSector->buildings, tIndex)), tIndex);
 
   removeBuildingS(tSector, QUARRY, 1);
-  printf("TEST5");
+  printf("Building1 ID = %d \n", getBuildingID(getBuildingByIndex(*tSector->buildings, 1)));
 
-  upgradeBuilding(tSector, MINE, 1);
-  printf("TEST6");
+  upgradeBuilding(tSector, MILL, 1);
+  printf("BuildingN level = %d \n", getBuildingLevel(getBuildingByIndex(*tSector->buildings, tIndex)));
 
 
 
 
   delSector(&tSector);
+  printf("Test1: Wheat profit = %d \n", getWheatProfit(*tSector));
 }
 
 

@@ -3,9 +3,9 @@
 Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nflands){
 	//100 is aproximate value
 
-	int tBuildLimit = 100 / (ncwood + ncstone + ncmetal + nflands);
-	int tmetalBuildLimit = ncmetal / 10;
-	int tflandsBuildLimit = nflands / 10;
+	int tBuildLimit = 5000 / (ncwood + ncstone + ncmetal + nflands);
+	int tmetalBuildLimit = ncmetal / 100;
+	int tflandsBuildLimit = nflands / 100;
 
 
 	/*
