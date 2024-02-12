@@ -56,9 +56,9 @@ void delSector(Sector** sector){
 }
 
 void reallocBuildLimit(Sector* sector){
-	sector->buildLimit = 100 / (sector->cWood + sector->cStone + sector->cMetal + sector->flands);
-	sector->metalBuildLimit = sector->cMetal / 10;
-	sector->flandsBuildLimit = sector->flands / 10;
+	sector->buildLimit = 5000 / (sector->cWood + sector->cStone + sector->cMetal + sector->flands);
+	sector->metalBuildLimit = sector->cMetal / 100;
+	sector->flandsBuildLimit = sector->flands / 100;
   
   reallocBuildingList(sector->buildings, sector->buildLimit);
   reallocBuildingList(sector->metalBuildings, sector->metalBuildLimit);
@@ -90,9 +90,9 @@ void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel){
   if (id == 0) {
     upgradeBuildingByIndex(sector->flandsBuildings, getIndexofBuilding(*sector->flandsBuildings, id, baseLevel));
   } else if (id == 2) {
-    upgradeBuildingByIndex(sector->flandsBuildings, getIndexofBuilding(*sector->metalBuildings, id, baseLevel)); 
+    upgradeBuildingByIndex(sector->metalBuildings, getIndexofBuilding(*sector->metalBuildings, id, baseLevel)); 
   } else if (id == 1 || id > 2) {
-    upgradeBuildingByIndex(sector->flandsBuildings, getIndexofBuilding(*sector->buildings, id, baseLevel));
+    upgradeBuildingByIndex(sector->buildings, getIndexofBuilding(*sector->buildings, id, baseLevel));
   }
 }
 
