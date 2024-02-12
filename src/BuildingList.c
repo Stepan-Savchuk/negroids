@@ -72,6 +72,7 @@ Building getBuildingByIndex(BuildingList buildingList, int index){
 	return buildingList.array[index];
 }
 
+//TODO : Debug dis shit
 void upgradeBuildingByIndex(BuildingList* buildingList, int index){
   Building* tBuilding = &buildingList->array[index];
   short tLevel = getBuildingLevel(*tBuilding);
