@@ -26,6 +26,8 @@ void delBuildingList(BuildingList** buildingList){
 	*buildingList = NULL;
 }
 
+//Need to refactor dis shit cause index may overlap with non-free memory at BuildingList after this function
+
 void addBuildingBL(BuildingList* buildingList, Building building){
 	buildingList->array[buildingList->index] = building;
 	if(buildingList->index == buildingList->last){
@@ -72,7 +74,7 @@ Building getBuildingByIndex(BuildingList buildingList, int index){
 	return buildingList.array[index];
 }
 
-//TODO : Debug dis shit
+//Debug dis shit
 void upgradeBuildingByIndex(BuildingList* buildingList, int index){
   Building* tBuilding = &buildingList->array[index];
   short tLevel = getBuildingLevel(*tBuilding);
