@@ -1,5 +1,6 @@
 #include "../include/BuildingList.h"
 #include <stdlib.h>
+#include <time.h>
 
 static const Building nullBuilding;
 
@@ -26,19 +27,28 @@ void delBuildingList(BuildingList** buildingList){
 	*buildingList = NULL;
 }
 
-//Need to refactor dis shit cause index may overlap with non-free memory at BuildingList after this function
-
 void addBuildingBL(BuildingList* buildingList, Building building){
-	buildingList->array[buildingList->index] = building;
-	if(buildingList->index == buildingList->last){
+	int tIndex = buildingList->index;
+  
+  buildingList->array[tIndex] = building;
+
+	if(tIndex == buildingList->last){
 		buildingList->last++;
+    buildingList->index++;
+    return;
 	}
 	
-	buildingList->index++;
-
+  while (tIndex<buildingList->last) {
+    if (getBuildingLevel(getBuildingByIndex(*buildingList, tIndex++)) != 0) {
+      buildingList->index++;
+      tIndex++;
+    }
+    else {
+      buildingList->index=tIndex;
+      break;
+    }
+  }
 }
-
-//FUCK. What if I only make two levels of buildings ant thus will make it more efficient to just make variables of buildings amount?
 
 void removeBuildingBL(BuildingList* buildingList, BuildingID id, short level){
 	Building* tArray = buildingList->array;
@@ -76,9 +86,9 @@ Building getBuildingByIndex(BuildingList buildingList, int index){
 
 //Debug dis shit
 void upgradeBuildingByIndex(BuildingList* buildingList, int index){
-  Building* tBuilding = &buildingList->array[index];
-  short tLevel = getBuildingLevel(*tBuilding);
-  setBuildingLevel(tBuilding, tLevel++);
+  //Building* tBuilding = &buildingList->array[index];
+  short tLevel = getBuildingLevel(getBuildingByIndex(*buildingList, index));
+  setBuildingLevel(&buildingList->array[index], tLevel++);
 }
 
 int getIndexofBuilding(BuildingList buildingList, BuildingID id, short level){
