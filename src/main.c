@@ -73,13 +73,10 @@ void test(){
   printf("Building1 ID = %d \n", getBuildingID(getBuildingByIndex(*tSector->buildings, 1)));
   
   BuildingList* tBuildingList = newBuildingList(1);
-  printf("... \n");
   addBuildingBL(tBuildingList, bMill);
-  printf("... \n");
   upgradeBuildingByIndex(tBuildingList, 0);
-  printf("... \n");
-  printf("Test BuildingList level = %d", getBuildingLevel(getBuildingByIndex(*tBuildingList, 0)));
-
+  short tLevel = getBuildingLevel(getBuildingByIndex(*tBuildingList, 0));
+  printf("Test BuildingList level = %d \n", tLevel);
 
   delSector(&tSector);
   printf("Test1: Wheat profit = %d \n", getWheatProfit(*tSector));

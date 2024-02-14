@@ -1,4 +1,5 @@
 #include "../include/BuildingList.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -86,9 +87,10 @@ Building getBuildingByIndex(BuildingList buildingList, int index){
 
 //Debug dis shit
 void upgradeBuildingByIndex(BuildingList* buildingList, int index){
-  //Building* tBuilding = &buildingList->array[index];
+  Building* tBuilding = &buildingList->array[index];
   short tLevel = getBuildingLevel(getBuildingByIndex(*buildingList, index));
-  setBuildingLevel(&buildingList->array[index], tLevel++);
+  tLevel++;
+  setBuildingLevel(tBuilding, tLevel);
 }
 
 int getIndexofBuilding(BuildingList buildingList, BuildingID id, short level){
