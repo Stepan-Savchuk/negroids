@@ -41,11 +41,10 @@ void addBuildingBL(BuildingList* buildingList, Building building){
 	
   while (tIndex<buildingList->last) {
     if (getBuildingLevel(getBuildingByIndex(*buildingList, tIndex++)) != 0) {
-      buildingList->index++;
       tIndex++;
     }
     else {
-      buildingList->index=tIndex;
+      buildingList->index = ++tIndex;
       break;
     }
   }

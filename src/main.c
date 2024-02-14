@@ -47,39 +47,7 @@ Building bSawmill = {SAWMILL, "Sawmill", 25, 25, 1};
  * Build Limit for other buildings = 5000/ 1(metal + flands + wood + stone)*/
 
 void test(){
-  Sector* tSector = newSector(HOME, 750, 500, 250, 500);
 
-  printf("Test0: Wheat profit = %d \n", getWheatProfit(*tSector));
-
-  addBuildingS(tSector, bSmithy);
-  addBuildingS(tSector, bQuarry);
-  printf("Building0 ID = %d \n", getBuildingID(getBuildingByIndex(*tSector->buildings, 0)));
-  printf("Building1 ID = %d \n", getBuildingID(getBuildingByIndex(*tSector->buildings, 1)));
-
-
-  printf("Build Limit0 = %d \n", tSector->buildLimit);
-  tSector->cWood /= 2;
-  reallocBuildLimit(tSector);
-  printf("Build Limit1 = %d \n", tSector->buildLimit);
-
-  removeBuildingS(tSector, SMITHY, 1);
-  printf("Building0 ID = %d \n", getBuildingID(getBuildingByIndex(*tSector->flandsBuildings, 0)));
-
-  addBuildingS(tSector, bMill);
-  int tIndex = getIndexofBuilding(*tSector->buildings, MILL, 1);
-  printf("BuildingN ID = %d and its position = %d \n", getBuildingID(getBuildingByIndex(*tSector->buildings, tIndex)), tIndex);
-
-  removeBuildingS(tSector, QUARRY, 1);
-  printf("Building1 ID = %d \n", getBuildingID(getBuildingByIndex(*tSector->buildings, 1)));
-  
-  BuildingList* tBuildingList = newBuildingList(1);
-  addBuildingBL(tBuildingList, bMill);
-  upgradeBuildingByIndex(tBuildingList, 0);
-  short tLevel = getBuildingLevel(getBuildingByIndex(*tBuildingList, 0));
-  printf("Test BuildingList level = %d \n", tLevel);
-
-  delSector(&tSector);
-  printf("Test1: Wheat profit = %d \n", getWheatProfit(*tSector));
 }
 
 
