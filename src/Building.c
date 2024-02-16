@@ -21,6 +21,10 @@ BuildingID getBuildingID(Building building){
 	return building.id;
 }
 
+int getBuildingProfit(Building building){
+  return building.profit;
+}
+
 short getBuildingLevel(Building building){
 	return building.level;
 }

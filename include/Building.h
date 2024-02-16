@@ -27,5 +27,7 @@ void delBuilding(Building** building);
 
 BuildingID getBuildingID(Building building);
 
+int getBuildingProfit(Building building);
+
 short getBuildingLevel(Building building);
 void setBuildingLevel(Building* building, short nlevel);
