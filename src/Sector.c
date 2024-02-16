@@ -106,6 +106,7 @@ int getWheatProfit(Sector sector){
     Building tBuilding = getBuildingByIndex(tBuildingList, i);
     sum += getBuildingProfit(tBuilding) * getBuildingLevel(tBuilding);
   }
+  
   return sum;
 }
 
@@ -113,8 +114,16 @@ int getStoneProfit(Sector sector){
   return sector.cStone / 20;
 }
 int getMetalProfit(Sector sector){
-  return sector.cMetal;
+  BuildingList tBuildingList = *sector.metalBuildings;
+
+  int sum = 0;
+  for (int i = 0; i < tBuildingList.last; i++) {
+    Building tBuilding = getBuildingByIndex(tBuildingList, i);
+    sum += getBuildingProfit(tBuilding) * getBuildingLevel(tBuilding);
+  }
+
+  return sum;
 }
 int getWoodProfit(Sector sector){
-  return sector.cWood;
+  return sector.cWood / 20;
 }

@@ -15,32 +15,32 @@ typedef struct Slave {
 	char* name;
 
 	short health;
-        short stamina;
-        short mental;
-        short hunger;
-        short horny;
+  short stamina;
+  short mental;
+  short hunger;
+  short horny;
 	short strength;
 	short speed;
 	short beauty;
 	
 	SpecID spec;
 
-        SectorID cSector;
+  SectorID cSector;
 } Slave;
 
 Slave* newSlave(int nid, char* nname, short nhealth, short nstamina, short nmental, short nhunger, short nhorny, short nstrength, short nspeed, short nbeauty, SpecID nspec, SectorID ncSector);
 
-void delSlave(Slave* slave);
+void delSlave(Slave** slave);
 
 int getSlaveID(Slave slave);
 void setSlaveID(Slave* slave, short nid);
 
 char* getSlaveName(Slave slave);
-void setSlaveName(Slave* slave, nname);
+void setSlaveName(Slave* slave, char* nname);
 
 short getSlaveHealth(Slave slave);
 void setSlaveHealth(Slave* slave, short nhealth);
-                                                           short getSlaveStamina(Slave slave);
+short getSlaveStamina(Slave slave);
 void setSlaveStamina(Slave* slave, short nstamina);        
 
 short getSlaveMental(Slave slave);
