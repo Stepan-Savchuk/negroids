@@ -98,7 +98,6 @@ void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel){
 
 // TODO : Thosr are temporal values before I make a formula
 
-// TODO : Test dis shit
 int getWheatProfit(Sector sector){
   BuildingList tBuildingList = *sector.flandsBuildings;
 
@@ -111,7 +110,7 @@ int getWheatProfit(Sector sector){
 }
 
 int getStoneProfit(Sector sector){
-  return sector.cStone;
+  return sector.cStone / 20;
 }
 int getMetalProfit(Sector sector){
   return sector.cMetal;

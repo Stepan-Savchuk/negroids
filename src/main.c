@@ -47,7 +47,14 @@ Building bSawmill = {SAWMILL, "Sawmill", 25, 25, 1};
  * Build Limit for other buildings = 5000/ 1(metal + flands + wood + stone)*/
 
 void test(){
+  Sector* tSector = newSector(HOME, 500, 100, 200, 900);
+  addBuildingS(tSector, bFarmField);
+  addBuildingS(tSector, bFarmField);
 
+  int tProfit = getWheatProfit(*tSector);
+  printf("Testing profit = %d \n", tProfit);
+
+  delSector(&tSector);
 }
 
 
