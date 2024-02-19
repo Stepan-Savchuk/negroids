@@ -53,7 +53,7 @@ short getSlaveHorny(Slave slave);
 void setSlaveHorny(Slave* slave, short nhorny);
 
 short getSlaveStrength(Slave slave);
-void setSlaveStrength(Slave* slave, short nhunger);
+void setSlaveStrength(Slave* slave, short nstrength);
 
 short getSlaveSpeed(Slave slave);
 void setSlaveSpeed(Slave* slave, short nspeed);

@@ -25,41 +25,110 @@ void delSlave(Slave** slave){
   *slave = NULL;
 }
 
+
+
 int getSlaveID(Slave slave){
   return slave.id;
 }
+
 void setSlaveID(Slave* slave, short nid){
   slave->id = nid;
 }
 
-char* getSlaveName(Slave slave);
-void setSlaveName(Slave* slave, char* nname);
 
-short getSlaveHealth(Slave slave);
-void setSlaveHealth(Slave* slave, short nhealth);
-short getSlaveStamina(Slave slave);
-void setSlaveStamina(Slave* slave, short nstamina);    
+char* getSlaveName(Slave slave){
+  return slave.name;
+}
 
-short getSlaveMental(Slave slave);
-void setSlaveMental(Slave* slave, short nmental);
+void setSlaveName(Slave* slave, char* nname){
+  slave->name = nname;
+}
 
-short getSlaveHunger(Slave slave);
-void setSlaveHunger(Slave* slave, short nhunger);
 
-short getSlaveHorny(Slave slave);
-void setSlaveHorny(Slave* slave, short nhorny);
+short getSlaveHealth(Slave slave){
+  return slave.health;
+}
 
-short getSlaveStrength(Slave slave);
-void setSlaveStrength(Slave* slave, short nhunger);
+void setSlaveHealth(Slave* slave, short nhealth){
+  slave->health = nhealth;
+}
 
-short getSlaveSpeed(Slave slave);
-void setSlaveSpeed(Slave* slave, short nspeed);
 
-short getSlaveBeauty(Slave slave);
-void setSlaveBeauty(Slave* slave, short nbeauty);
+short getSlaveStamina(Slave slave){
+  return slave.stamina;
+}
 
-short getSlaveSpec(Slave slave);
-void setSlaveSpec(Slave* slave, SpecID nspec);
+void setSlaveStamina(Slave* slave, short nstamina){
+  slave->stamina = nstamina;
+} 
 
-SectorID getSlaveCSector(Slave slave);
-void setSlaveCSector(Slave* slave, SectorID ncSector);
+
+short getSlaveMental(Slave slave){
+  return slave.mental;
+}
+
+void setSlaveMental(Slave* slave, short nmental){
+  slave->mental = nmental;
+}
+
+
+short getSlaveHunger(Slave slave){
+  return slave.hunger;
+}
+
+void setSlaveHunger(Slave* slave, short nhunger){
+  slave->hunger = nhunger;
+}
+
+
+short getSlaveHorny(Slave slave){
+  return slave.horny;
+}
+
+void setSlaveHorny(Slave* slave, short nhorny){
+  slave->horny = nhorny;
+}
+
+
+short getSlaveStrength(Slave slave){
+  return slave.strength;
+}
+
+void setSlaveStrength(Slave* slave, short nstrength){
+  slave->strength = nstrength;
+}
+
+
+short getSlaveSpeed(Slave slave){
+  return slave.speed;
+}
+
+void setSlaveSpeed(Slave* slave, short nspeed){
+  slave->speed = nspeed;
+}
+
+
+short getSlaveBeauty(Slave slave){
+  return slave.beauty;
+}
+
+void setSlaveBeauty(Slave* slave, short nbeauty){
+  slave->beauty = nbeauty;
+}
+
+
+short getSlaveSpec(Slave slave){
+  return slave.spec;
+}
+
+void setSlaveSpec(Slave* slave, SpecID nspec){
+  slave->spec = nspec;
+}
+
+
+SectorID getSlaveCSector(Slave slave){
+  return slave.cSector;
+}
+void setSlaveCSector(Slave* slave, SectorID ncSector){
+  slave->cSector = ncSector;
+}

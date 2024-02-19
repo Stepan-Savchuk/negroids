@@ -1,18 +1,4 @@
-#include "Sector.h"
-
-typedef struct Overseer {
-	short id;
-	char* name;
-
-	short health;
-	short stamina;
-  short hunger;
-  short ammo;
-
-  SectorID cSector;
-} Overseer;
-
-//TODO make up some functions besides con/de-structors and g/s-etters for em
+#include "../include/Overseer.h"
 
 Overseer* newOverseer(short nid, char* nname, short nhealth, short nstamina, short nhunger, short nammo, SectorID ncsector);
 
@@ -32,7 +18,7 @@ short getOverseerStamina(Overseer overseer);
 void setOverseerStamina(Overseer* overseer, short nstamina);
 
 short getOverseerHunger(Overseer overseer);
-void setOverseerHunger(Overseer* overseer, short nhunger);       
+void setOverseerHunger(Overseer* overseer, short nhunger);      
 
 short getOverseerAmmo(Overseer overseer);
 void setOverseerStamina(Overseer* overseer, short nammo);
