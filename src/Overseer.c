@@ -1,27 +1,82 @@
 #include "../include/Overseer.h"
 
-Overseer* newOverseer(short nid, char* nname, short nhealth, short nstamina, short nhunger, short nammo, SectorID ncsector);
+Overseer* newOverseer(short nid, char* nname, short nhealth, short nstamina, short nhunger, short nammo, SectorID ncsector){
+  Overseer* tOverseer = (Overseer*) malloc(sizeof(Overseer));
 
-void delOverseer(Overseer* overseer);
+  tOverseer->id = nid;
+  tOverseer->name = nname;
+  tOverseer->health = nhealth;
+  tOverseer->stamina = nstamina;
+  tOverseer->hunger = nhunger;
+  tOverseer->ammo = nammo;
+  tOverseer->cSector = ncsector;
+
+  return tOverseer;
+}
+
+void delOverseer(Overseer** overseer){
+  free(*overseer);
+  *overseer = NULL;
+}
 
 
-short getOverseerID(Overseer overseer);
-void setOverseerID(Overseer* overseer, short nid);
+short getOverseerID(Overseer overseer){
+  return overseer.id;
+}
 
-char* getOverseerName(Overseer overseer);
-void setOverseerName(Overseer* overseer, char* nname);
+void setOverseerID(Overseer* overseer, short nid){
+  overseer->id = nid;
+}
 
-short getOverseerHealth(Overseer overseer);
-void setOverseerHealth(Overseer* overseer, short nhealth);
 
-short getOverseerStamina(Overseer overseer);
-void setOverseerStamina(Overseer* overseer, short nstamina);
+char* getOverseerName(Overseer overseer){
+  return overseer.name;
+}
 
-short getOverseerHunger(Overseer overseer);
-void setOverseerHunger(Overseer* overseer, short nhunger);      
+void setOverseerName(Overseer* overseer, char* nname){
+  overseer->name = nname;
+}
 
-short getOverseerAmmo(Overseer overseer);
-void setOverseerStamina(Overseer* overseer, short nammo);
 
-SectorID getOverseerCSector(Overseer overseer);
-void setOverseerCSector(Overseer* overseer, SectorID ncSector);
+short getOverseerHealth(Overseer overseer){
+  return overseer.health;
+}
+
+void setOverseerHealth(Overseer* overseer, short nhealth){
+  overseer->health = nhealth;
+}
+
+
+short getOverseerStamina(Overseer overseer){
+  return overseer.stamina;
+}
+
+void setOverseerStamina(Overseer* overseer, short nstamina){
+  overseer->stamina = nstamina;
+}
+
+
+short getOverseerHunger(Overseer overseer){
+  return overseer.hunger;
+}
+void setOverseerHunger(Overseer* overseer, short nhunger){
+  overseer->hunger = nhunger;
+} 
+
+
+short getOverseerAmmo(Overseer overseer){
+  return overseer.ammo;
+}
+
+void setOverseerAmmo(Overseer* overseer, short nammo){
+  overseer->ammo = nammo;
+}
+
+
+SectorID getOverseerCSector(Overseer overseer){
+  return overseer.cSector;
+}
+
+void setOverseerCSector(Overseer* overseer, SectorID ncSector){
+  overseer->cSector = ncSector;
+}

@@ -16,7 +16,7 @@ typedef struct Overseer {
 
 Overseer* newOverseer(short nid, char* nname, short nhealth, short nstamina, short nhunger, short nammo, SectorID ncsector);
 
-void delOverseer(Overseer* overseer);
+void delOverseer(Overseer** overseer);
 
 
 short getOverseerID(Overseer overseer);
