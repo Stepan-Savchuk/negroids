@@ -1,19 +1,10 @@
 #include "../include/Sector.h"
 
 Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nflands){
-	//100 is aproximate value
-
-	int tBuildLimit = 5000 / (ncwood + ncstone + ncmetal + nflands);
+	
+  int tBuildLimit = 5000 / (ncwood + ncstone + ncmetal + nflands);
 	int tmetalBuildLimit = ncmetal / 100;
 	int tflandsBuildLimit = nflands / 100;
-
-
-	/*
-	Building* tBuildings = (Building*) malloc(sizeof(Building) * tBuildLimit);
-	Building* tmetalBuildings = (Building*) malloc(sizeof(Building) * tmetalBuildLimit);
-	Building* tflandsBuildings = (Building*) malloc(sizeof(Building) * tflandsBuildLimit);
-	*/
-
 
 	Sector* tSector = (Sector*) malloc(sizeof(Sector));
 
@@ -27,7 +18,6 @@ Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nfland
 	tSector->flandsBuildLimit = tflandsBuildLimit;
 	
 	tSector->buildings = newBuildingList(tBuildLimit);
-	
 	tSector->metalBuildings = newBuildingList(tmetalBuildLimit);
 	tSector->flandsBuildings = newBuildingList(tflandsBuildLimit);
 
@@ -35,11 +25,6 @@ Sector* newSector(SectorID nid, int ncwood, int ncstone, int ncmetal, int nfland
 }
 
 void delSector(Sector** sector){
-	/*BuildingList* tBuildings = *sector.buildings;
-	BuildingList* tMetalBuildings = *sector.metalBuildings;
-	BuildingList* tFLandsBuildings = *sector.flandsBuildings;
-	*/
-
 	Sector* tSector = *sector;
 
 	BuildingList* tBuildings = tSector->buildings;
@@ -71,7 +56,7 @@ void addBuildingS(Sector* sector, Building building){
     addBuildingBL(sector->flandsBuildings, building);
   } else if (building.id == 2) {
     addBuildingBL(sector->metalBuildings, building);
-  } else if (building.id == 1 || building.id > 2) {
+  } else if (building.id == 1 || ( building.id > 2 && building.id <= 6)) {
     addBuildingBL(sector->buildings, building);
   }
 }
@@ -91,12 +76,10 @@ void upgradeBuilding(Sector* sector, BuildingID id, short baseLevel){
     upgradeBuildingByIndex(sector->flandsBuildings, getIndexofBuilding(*sector->flandsBuildings, id, baseLevel));
   } else if (id == 2) {
     upgradeBuildingByIndex(sector->metalBuildings, getIndexofBuilding(*sector->metalBuildings, id, baseLevel)); 
-  } else if (id == 1 || id > 2) {
+  } else if (id == 1 || ( id > 2 && id <= 6) ) {
     upgradeBuildingByIndex(sector->buildings, getIndexofBuilding(*sector->buildings, id, baseLevel));
   }
 }
-
-// TODO : Thosr are temporal values before I make a formula
 
 int getWheatProfit(Sector sector){
   BuildingList tBuildingList = *sector.flandsBuildings;

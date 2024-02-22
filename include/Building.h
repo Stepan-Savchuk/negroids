@@ -8,7 +8,10 @@ typedef enum {
 	MINE,
 	SMITHY,
 	QUARRY,
-	SAWMILL
+	SAWMILL,
+  HOUSE,
+  BARRACKS,
+  SERV_HOUSE
 } BuildingID;
 
 typedef struct Building {

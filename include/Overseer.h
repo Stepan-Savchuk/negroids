@@ -12,8 +12,6 @@ typedef struct Overseer {
   SectorID cSector;
 } Overseer;
 
-//TODO make up some functions besides con/de-structors and g/s-etters for em
-
 Overseer* newOverseer(short nid, char* nname, short nhealth, short nstamina, short nhunger, short nammo, SectorID ncsector);
 
 void delOverseer(Overseer** overseer);

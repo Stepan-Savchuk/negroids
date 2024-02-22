@@ -32,7 +32,6 @@ void mainLoop(){
 void end(){
 }
 
-//TODO : Add barracks building and probably home building which can be upgraded
 
 Building bFarmField = {FARM_FIELD, "Farming field", 0, 10, 1};
 Building bMill = {MILL, "Mill", 50, 40, 1};
@@ -40,6 +39,9 @@ Building bMine = {MINE, "Mine", 20, 20, 1};
 Building bSmithy = {SMITHY, "Smithy", 25, 30, 1};
 Building bQuarry = {QUARRY, "Quarry", 25, 25, 1};
 Building bSawmill = {SAWMILL, "Sawmill", 25, 25, 1};
+Building bMansion = {HOUSE  , "Home", 25, 0, 1};
+Building bBarracks = {BARRACKS, "Barracks", 25, 0, 1};
+Building bServHouse = {SERV_HOUSE, "Servers House", 25, 0, 1};
 
 
 /* Build Limit for metal buildings =  sector.metal /1000
