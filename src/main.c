@@ -1,20 +1,10 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#include "../include/init.h"
 #include "../include/render.h"
 #include "../include/input.h"
 
-#include "../include/Building.h"
-#include "../include/Sector.h"
-
-void initRender(){
-	//initScreen();
-}
-
-void init(){
-	//initRender();
-	//initInput();
-}
 
 int input(){
 	return 0;
@@ -49,14 +39,6 @@ Building bServHouse = {SERV_HOUSE, "Servers House", 25, 0, 1};
  * Build Limit for other buildings = 5000/ 1(metal + flands + wood + stone)*/
 
 void test(){
-  Sector* tSector = newSector(HOME, 500, 100, 200, 900);
-  addBuildingS(tSector, bFarmField);
-  addBuildingS(tSector, bFarmField);
-
-  int tProfit = getWheatProfit(*tSector);
-  printf("Testing profit = %d \n", tProfit);
-
-  delSector(&tSector);
 }
 
 
