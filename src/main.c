@@ -1,8 +1,6 @@
-#include <stdio.h>
 #include <unistd.h>
 
 #include "../include/init.h"
-#include "../include/render.h"
 #include "../include/input.h"
 
 
