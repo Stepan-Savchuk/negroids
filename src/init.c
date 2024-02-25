@@ -9,8 +9,9 @@ void initRender(){
 
 void initInput(){}
 
-void initSectors(){
-  Sector* homeSector = newSector(HOME, 500, 500, 250, 500);
+void initSectors(Sector* sectors){
+  //TODO : Figure out dis shit
+  sectors[0] = newSector(HOME, 500, 500, 250, 500);
   Sector* portSector = newSector(PORT, 500, 1250, 0, 0);
 
   Sector* norternSector = newSector(NORTH, 250, 750, 500, 250);
@@ -28,11 +29,11 @@ void initActors(){}
 
 void init0Resources(){}
 
-void init(){
+void init(Sector* sectors){
   initRender();
   initInput();
 
-  initSectors();
+  initSectors(sectors);
   initActors();
 
   init0Resources();

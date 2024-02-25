@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <unistd.h>
 
 #include "../include/init.h"
@@ -41,14 +42,19 @@ void test(){
 
 
 int main(){
+  Sector* homeSector;
+  Sector* portSector;
+  Sector* norternSector;
+  Sector* northFarSector;
+  Sector* easternSector;
+  Sector* eastFarSector;
+  Sector* southernSector;
+  Sector* southFarSector;
+  
+  Sector* tSectors = (Sector*) malloc(sizeof(Sector)*8);
 
-	init();
+  init(tSectors);
 
-	mainLoop();
 
-	test();
-
-	end();
-
-	return 0;
+  return 0;
 }

@@ -9,9 +9,9 @@ void initRender();
 
 void initInput();
 
-void initSectors();
+void initSectors(Sector* sectors);
 void initActors();
 
 void init0Resources();
 
-void init();
+void init(Sector* sectors);
