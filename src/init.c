@@ -27,6 +27,7 @@ void initSectors(Sector** sectors){
 }
 void initActors(Player* player, Slave** slaves){
   player = initPlayer(10, 10, 10, 10, 0, HOME);
+
 }
 
 void init0Resources(){}

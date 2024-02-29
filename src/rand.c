@@ -1,3 +1,5 @@
 #include "../include/rand.h"
 
-short randShort(){}
+short randShort(){
+  return random();
+}
