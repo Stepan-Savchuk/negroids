@@ -1,3 +1,3 @@
 #include <stdlib.h>
 
-short randShort();
+short randShort(short min, short max);
