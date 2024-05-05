@@ -4,6 +4,9 @@
 #include "Overseer.h"
 //TODO : Make Commands for controlling da shit
 
+//NOTE : For now I will make the menu as a list of options and
+//       with manual input of each option
+
 typedef enum cMenu{
   MAIN,
   BUILDING,
