@@ -1,8 +1,10 @@
 #include "../include/rand.h"
-#include <stdlib.h>
 
 //TODO : Test dis shit
 
 short randShort(short min, short max){
-  return (random() % RAND_MAX) * (10+(max-min));
+  srandom(time(NULL));
+  double fraction = 1.0 / ((double) RAND_MAX + 1.0);
+
+  return (short) (random() * fraction * (max - min + 1) + min);
 }
