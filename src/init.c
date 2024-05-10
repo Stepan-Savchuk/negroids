@@ -27,7 +27,13 @@ void initSectors(Sector** sectors){
 }
 void initActors(Player* player, Slave** slaves){
   player = initPlayer(10, 10, 10, 10, 0, HOME);
-
+  
+  //TODO : Init slaves actors
+  //NOTE: Initial testing count of slaves is 9
+  
+  for (int i = 0; i < 9; i++) {
+    
+  }
 }
 
 void init0Resources(){}

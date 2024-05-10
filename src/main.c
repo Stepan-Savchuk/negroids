@@ -39,12 +39,11 @@ Building bServHouse = {SERV_HOUSE, "Servers House", 25, 0, 1};
  * Build Limit for other buildings = 5000/ 1(metal + flands + wood + stone)*/
 
 void test(){
-  printf("Random test number = %d \n", randShort(1, 10));
 }
 
 
 int main(){
-  /*
+  
   Sector* homeSector;
   Sector* portSector;
   Sector* norternSector;
@@ -57,9 +56,9 @@ int main(){
   Sector* tSectors = (Sector*) malloc(sizeof(Sector)*8);
   free(tSectors);
   tSectors = NULL;
-  */
+  
 
-  //init(tSectors);
+  init(tSectors);
 
   test();
 
