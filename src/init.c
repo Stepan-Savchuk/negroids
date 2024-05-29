@@ -31,8 +31,12 @@ void initActors(Player* player, Slave** slaves){
   //TODO : Init slaves actors
   //NOTE: Initial testing count of slaves is 9
   
+  Slave tSlaves[9];
+
   for (int i = 0; i < 9; i++) {
-    
+    Slave* tSlave = newSlave(i, "Slave", randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 7), HOME);
+
+    tSlaves[i] = *tSlave;
   }
 }
 
