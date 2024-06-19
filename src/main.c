@@ -43,7 +43,11 @@ void test(){
 
 
 int main(){
+
+  //NOTE : For now I'll make resource values global(maybe forever)
   
+  int* gWood, gStone, gMetal, gWheat, gFlour, gSteel;
+
   Sector* homeSector;
   Sector* portSector;
   Sector* norternSector;

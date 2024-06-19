@@ -39,7 +39,15 @@ void initActors(Player* player, Slave** slaves){
   }
 }
 
-void init0Resources(){}
+void init0Resources(int* pWood, int* pStone, int* pMetal, int* pWheat, int* pFlour, int* pSteel){
+  //Default values for now will be at 100
+  *pWood = 100;
+  *pStone = 100;
+  *pMetal = 0;
+  *pWheat = 0;
+  *pFlour = 100;
+  *pSteel = 0;
+}
 
 void init(Sector** sectors, Player* player, Slave** slaves){
   initRender();
