@@ -13,9 +13,6 @@ void initRender();
 
 void initInput();
 
-void initSectors(Sector** sectors);
 void initActors(Player* player, Slave** slaves);
 
-void init0Resources(int* pWood, int* pStone, int* pMetal, int* pWheat, int* pFlour, int* pSteel);
-
-void init(Sector** sectors, Player* player, Slave** slaves);
+void init(Player* player, Slave** slaves);

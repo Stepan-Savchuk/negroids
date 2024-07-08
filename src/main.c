@@ -38,7 +38,7 @@ Building bServHouse = {SERV_HOUSE, "Servers House", 25, 0, 1};
  * Build Limit for fertile lands = sector.flands / 1000
  * Build Limit for other buildings = 5000/ 1(metal + flands + wood + stone)*/
 
-void test(){
+void test(Player testPlayer, Slave* testSlaves){
 }
 
 
@@ -64,12 +64,13 @@ int main(){
  
  Player* gPlayer;
  //Slaves array
+ Slave* gSlaves = malloc(sizeof(Slave)*8);
  
  
- init(gPlayer, );
+ init(gPlayer, gSlaves);
 
  
- test();
+ test(*gPlayer, *gSlaves);
 
 
  return 0;
