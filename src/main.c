@@ -39,6 +39,14 @@ Building bServHouse = {SERV_HOUSE, "Servers House", 25, 0, 1};
  * Build Limit for other buildings = 5000/ 1(metal + flands + wood + stone)*/
 
 void test(Player testPlayer, Slave* testSlaves){
+  printf("TEST START\n");
+
+  printf("Test Player Health = %d\n", getPlayerHealth(testPlayer));
+  for (int i=0; i<9; i++) {
+    printf("Test Slave ID = %d\n", getSlaveID(testSlaves[i]));
+  }
+
+  printf("TEST END\n");
 }
 
 
@@ -46,10 +54,10 @@ int main(){
 
   //NOTE : For now I'll make resource values global(maybe forever)
  int gWood = 100;
- int gStone = 100
+ int gStone = 100;
  int gMetal = 0;
  int gWheat = 0;
- int gFlour = 100
+ int gFlour = 100;
  int gSteel = 0;
  
 
@@ -67,10 +75,10 @@ int main(){
  Slave* gSlaves = malloc(sizeof(Slave)*8);
  
  
- init(gPlayer, gSlaves);
+ init(gPlayer, &gSlaves);
 
  
- test(*gPlayer, *gSlaves);
+ test(*gPlayer, gSlaves);
 
 
  return 0;
