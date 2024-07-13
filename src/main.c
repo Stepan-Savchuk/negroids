@@ -42,6 +42,8 @@ void test(Player testPlayer, Slave* testSlaves){
   printf("TEST START\n");
 
   printf("Test Player Health = %d\n", getPlayerHealth(testPlayer));
+  printf("Test Player Stamina = %d\n", getPlayerStamina(testPlayer));
+
   for (int i=0; i<9; i++) {
     printf("Test Slave ID = %d\n", getSlaveID(testSlaves[i]));
   }
@@ -75,7 +77,7 @@ int main(){
  Slave* gSlaves = malloc(sizeof(Slave)*8);
  
  
- init(gPlayer, &gSlaves);
+ init(&gPlayer, &gSlaves);
 
  
  test(*gPlayer, gSlaves);

@@ -4,13 +4,13 @@
 
 
 void initRender(){
-  system("clear");
+  //system("clear");
 }
 
 void initInput(){}
 
-void initActors(Player* player, Slave** slaves){
-  player = initPlayer(10, 10, 10, 10, 0, HOME);
+void initActors(Player** player, Slave** slaves){
+  *player = initPlayer(10, 10, 10, 10, 0, HOME);
   
   //NOTE: Initial testing count of slaves is 9
   
@@ -23,7 +23,7 @@ void initActors(Player* player, Slave** slaves){
   }
 }
 
-void init(Player* player, Slave** slaves){
+void init(Player** player, Slave** slaves){
   initRender();
   initInput();
 
