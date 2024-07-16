@@ -77,7 +77,7 @@ int main(){
  Slave* gSlaves = malloc(sizeof(Slave)*8);
  
  
- init(&gPlayer, &gSlaves);
+init(&gPlayer, &gSlaves);
 
  
  test(*gPlayer, gSlaves);
