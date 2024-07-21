@@ -13,6 +13,6 @@ void initRender();
 
 void initInput();
 
-void initActors(Player** player, Slave** slaves);
+void initActors(Player* player, Slave** slaves);
 
 void init(Player** player, Slave** slaves);

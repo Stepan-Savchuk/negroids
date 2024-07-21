@@ -46,6 +46,7 @@ void test(Player testPlayer, Slave* testSlaves){
 
   for (int i=0; i<9; i++) {
     printf("Test Slave ID = %d\n", getSlaveID(testSlaves[i]));
+    printf("Test Slave Health = %d\n", getSlaveHealth(testSlaves[i]));
   }
 
   printf("TEST END\n");
