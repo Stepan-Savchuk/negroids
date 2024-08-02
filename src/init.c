@@ -9,8 +9,8 @@ void initRender(){
 
 void initInput(){}
 
-void initActors(Player* player, Slave** slaves){
-  player = initPlayer(10, 10, 10, 10, 0, HOME);
+void initActors(Player** player, Slave** slaves){
+  *player = initPlayer(10, 10, 10, 10, 0, HOME);
   
   //NOTE: Initial testing count of slaves is 9
   
@@ -27,7 +27,7 @@ void init(Player** player, Slave** slaves){
   initRender();
   initInput();
 
-  initActors(*player, slaves);
+  initActors(player, slaves);
   printf("Test1 Player health = %d\n", getPlayerHealth(**player));
   printf("Test1 Player stamina = %d\n", getPlayerStamina(**player));
   printf("Test1 Player Sector = %d\n", getPlayerCSector(**player));
