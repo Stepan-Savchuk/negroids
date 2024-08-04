@@ -27,8 +27,12 @@ void init(Player** player, Slave** slaves){
   initRender();
   initInput();
 
-  initActors(player, slaves);
-  printf("Test1 Player health = %d\n", getPlayerHealth(**player));
-  printf("Test1 Player stamina = %d\n", getPlayerStamina(**player));
-  printf("Test1 Player Sector = %d\n", getPlayerCSector(**player));
+  Player* tPlayer;
+
+  initActors(&tPlayer, slaves);
+  *player = tPlayer;
+
+  printf("Test1 Player health = %d\n", getPlayerHealth(*tPlayer));
+  printf("Test1 Player stamina = %d\n", getPlayerStamina(*tPlayer));
+  printf("Test1 Player Sector = %d\n", getPlayerCSector(*tPlayer));
 }

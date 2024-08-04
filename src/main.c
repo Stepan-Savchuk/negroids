@@ -41,7 +41,7 @@ Building bServHouse = {SERV_HOUSE, "Servers House", 25, 0, 1};
 void test(Player testPlayer, Slave* testSlaves){
   printf("TEST START\n");
 
-  printf("Test Player Health = %d\n", getPlayerHealth(testPlayer));
+  printf("\nTest Player Health = %d\n", getPlayerHealth(testPlayer));
   printf("Test Player Stamina = %d\n", getPlayerStamina(testPlayer));
 
   for (int i=0; i<9; i++) {
