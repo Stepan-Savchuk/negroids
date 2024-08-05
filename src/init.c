@@ -17,9 +17,7 @@ void initActors(Player** player, Slave** slaves){
   //Slave tSlaves[9];
 
   for (int i = 0; i < 9; i++) {
-    Slave* tSlave = newSlave(i, "Slave", randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 7), HOME);
-
-    slaves[i] = tSlave;
+    slaves[i] = newSlave(i, "Slave", randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 10), randShort(1, 7), HOME);
   }
 }
 
@@ -28,11 +26,13 @@ void init(Player** player, Slave** slaves){
   initInput();
 
   Player* tPlayer;
+  Slave* tSlaves;
 
-  initActors(&tPlayer, slaves);
+  initActors(&tPlayer, &tSlaves);
   *player = tPlayer;
+  *slaves = tSlaves;
 
-  printf("Test1 Player health = %d\n", getPlayerHealth(*tPlayer));
-  printf("Test1 Player stamina = %d\n", getPlayerStamina(*tPlayer));
-  printf("Test1 Player Sector = %d\n", getPlayerCSector(*tPlayer));
+  printf("Test1 Slave0 health = %d\n", getSlaveHealth(tSlaves[0]));
+  printf("Test1 Slave0 stamina = %d\n", getSlaveStamina(tSlaves[0]));
+  printf("Test1 Slave0 Sector = %d\n", getSlaveCSector(tSlaves[0]));
 }

@@ -54,34 +54,35 @@ void test(Player testPlayer, Slave* testSlaves){
 
 
 int main(){
-//NOTE : For now I'll make resource values global(maybe forever)
-
-int gWood = 100;
-int gStone = 100;
-int gMetal = 0;
-int gWheat = 0;
-int gFlour = 100;
-int gSteel = 0;
-
-
-Sector* homeSector = newSector(HOME, 500, 500, 250, 500);
-Sector* portSector = newSector(PORT, 500, 1250, 0, 0);
-Sector* norternSector = newSector(NORTH, 250, 750, 500, 250);
-Sector* northFarSector = newSector(NORTHF, 0, 1000, 750, 0);
-Sector* easternSector = newSector(EAST, 750, 250, 0, 750);
-Sector* eastFarSector = newSector(EASTF, 1000, 500, 250, 0);
-Sector* southernSector = newSector(SOUTH, 500, 250, 250, 750);   Sector* southFarSector = newSector(SOUTHF, 250, 250, 250, 1000);
+  //NOTE : For now I'll make resource values global(maybe forever)
+  
+  int gWood = 100;
+  int gStone = 100;
+  int gMetal = 0;
+  int gWheat = 0;
+  int gFlour = 100;
+  int gSteel = 0;
 
 
-Player* gPlayer;
-//Slaves array
-Slave* gSlaves = malloc(sizeof(Slave)*8);
+  Sector* homeSector = newSector(HOME, 500, 500, 250, 500);
+  Sector* portSector = newSector(PORT, 500, 1250, 0, 0);
+  Sector* norternSector = newSector(NORTH, 250, 750, 500, 250);
+  Sector* northFarSector = newSector(NORTHF, 0, 1000, 750, 0);
+  Sector* easternSector = newSector(EAST, 750, 250, 0, 750);
+  Sector* eastFarSector = newSector(EASTF, 1000, 500, 250, 0);
+  Sector* southernSector = newSector(SOUTH, 500, 250, 250, 750);
+  Sector* southFarSector = newSector(SOUTHF, 250, 250, 250, 1000);
 
 
-init(&gPlayer, &gSlaves);
+  Player* gPlayer;
+  //Slaves array
+  Slave* gSlaves = malloc(sizeof(Slave)*8);
 
-test(*gPlayer, gSlaves);
+
+  init(&gPlayer, &gSlaves);
+
+  test(*gPlayer, gSlaves);
 
 
-return 0;
+  return 0;
 }
