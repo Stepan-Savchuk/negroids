@@ -1,0 +1,69 @@
+[1/1270] Building CXX object laf/os/CMakeFiles/laf-os.dir/system.cpp.o
+FAILED: laf/os/CMakeFiles/laf-os.dir/system.cpp.o 
+/usr/bin/clang++ -DCLIP_ENABLE_IMAGE=1 -DCMARK_STATIC_DEFINE -DHAVE_CONFIG_H -DHAVE_CONFIG_OVERRIDE_H=1 -DLAF_LINUX -DLAF_SKIA -DLAF_WITH_CLIP -DLAF_WITH_REGION -DNDEBUG -DPNG_NO_MMX_CODE -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DSK_BUILD_FOR_UNIX -DSK_ENABLE_SKSL=1 -DSK_GAMMA_APPLY_TO_A8 -DSK_GAMMA_SRGB -DSK_GL=1 -DSK_INTERNAL -DSK_R32_SHIFT=16 -DSK_SCALAR_TO_FLOAT_EXCLUDED -DSK_SUPPORT_GPU=1 -I/home/nikson/aseprite/third_party/zlib -I/home/nikson/aseprite/build/third_party/zlib -I/home/nikson/aseprite/third_party/libpng -I/home/nikson/aseprite/build/third_party/libpng -I/home/nikson/aseprite/third_party/tinyxml2 -I/home/nikson/aseprite/third_party/TinyEXIF -I/home/nikson/aseprite/third_party/pixman/pixman -I/home/nikson/aseprite/build -I/home/nikson/aseprite/third_party/giflib -I/home/nikson/aseprite/third_party/jpeg -I/home/nikson/aseprite/third_party/curl/include -I/home/nikson/aseprite/third_party/simpleini -I/home/nikson/aseprite/laf -I/home/nikson/aseprite/build/laf -I/home/nikson/aseprite/src -I/home/nikson/deps/skia -I/home/nikson/deps/skia/third_party/externals/freetype/include -I/home/nikson/deps/skia/third_party/externals/harfbuzz/src -stdlib=libc++ -O2 -g -DNDEBUG -std=c++17 -MD -MT laf/os/CMakeFiles/laf-os.dir/system.cpp.o -MF laf/os/CMakeFiles/laf-os.dir/system.cpp.o.d -o laf/os/CMakeFiles/laf-os.dir/system.cpp.o -c /home/nikson/aseprite/laf/os/system.cpp
+In file included from /home/nikson/aseprite/laf/os/system.cpp:14:
+In file included from /home/nikson/aseprite/laf/os/system.h:20:
+In file included from /home/nikson/aseprite/laf/os/window.h:15:
+In file included from /home/nikson/aseprite/laf/os/dnd.h:14:
+In file included from /home/nikson/aseprite/laf/os/surface.h:18:
+In file included from /home/nikson/aseprite/laf/os/paint.h:74:
+/home/nikson/aseprite/laf/os/skia/paint.h:13:10: fatal error: 'include/core/SkPaint.h' file not found
+   13 | #include "include/core/SkPaint.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+[2/1270] Building CXX object laf/os/CMakeFiles/laf-os.dir/common/system.cpp.o
+FAILED: laf/os/CMakeFiles/laf-os.dir/common/system.cpp.o 
+/usr/bin/clang++ -DCLIP_ENABLE_IMAGE=1 -DCMARK_STATIC_DEFINE -DHAVE_CONFIG_H -DHAVE_CONFIG_OVERRIDE_H=1 -DLAF_LINUX -DLAF_SKIA -DLAF_WITH_CLIP -DLAF_WITH_REGION -DNDEBUG -DPNG_NO_MMX_CODE -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DSK_BUILD_FOR_UNIX -DSK_ENABLE_SKSL=1 -DSK_GAMMA_APPLY_TO_A8 -DSK_GAMMA_SRGB -DSK_GL=1 -DSK_INTERNAL -DSK_R32_SHIFT=16 -DSK_SCALAR_TO_FLOAT_EXCLUDED -DSK_SUPPORT_GPU=1 -I/home/nikson/aseprite/third_party/zlib -I/home/nikson/aseprite/build/third_party/zlib -I/home/nikson/aseprite/third_party/libpng -I/home/nikson/aseprite/build/third_party/libpng -I/home/nikson/aseprite/third_party/tinyxml2 -I/home/nikson/aseprite/third_party/TinyEXIF -I/home/nikson/aseprite/third_party/pixman/pixman -I/home/nikson/aseprite/build -I/home/nikson/aseprite/third_party/giflib -I/home/nikson/aseprite/third_party/jpeg -I/home/nikson/aseprite/third_party/curl/include -I/home/nikson/aseprite/third_party/simpleini -I/home/nikson/aseprite/laf -I/home/nikson/aseprite/build/laf -I/home/nikson/aseprite/src -I/home/nikson/deps/skia -I/home/nikson/deps/skia/third_party/externals/freetype/include -I/home/nikson/deps/skia/third_party/externals/harfbuzz/src -stdlib=libc++ -O2 -g -DNDEBUG -std=c++17 -MD -MT laf/os/CMakeFiles/laf-os.dir/common/system.cpp.o -MF laf/os/CMakeFiles/laf-os.dir/common/system.cpp.o.d -o laf/os/CMakeFiles/laf-os.dir/common/system.cpp.o -c /home/nikson/aseprite/laf/os/common/system.cpp
+In file included from /home/nikson/aseprite/laf/os/common/system.cpp:12:
+In file included from /home/nikson/aseprite/laf/os/common/system.h:16:
+In file included from /home/nikson/aseprite/laf/os/common/sprite_sheet_font.h:18:
+In file included from /home/nikson/aseprite/laf/os/surface.h:18:
+In file included from /home/nikson/aseprite/laf/os/paint.h:74:
+/home/nikson/aseprite/laf/os/skia/paint.h:13:10: fatal error: 'include/core/SkPaint.h' file not found
+   13 | #include "include/core/SkPaint.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+[3/1270] Building CXX object laf/gfx/CMakeFiles/laf-gfx.dir/packing_rects.cpp.o
+FAILED: laf/gfx/CMakeFiles/laf-gfx.dir/packing_rects.cpp.o 
+/usr/bin/clang++ -DCMARK_STATIC_DEFINE -DHAVE_CONFIG_H -DHAVE_CONFIG_OVERRIDE_H=1 -DLAF_LINUX -DLAF_SKIA -DLAF_WITH_REGION -DNDEBUG -DPNG_NO_MMX_CODE -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DSK_BUILD_FOR_UNIX -DSK_ENABLE_SKSL=1 -DSK_GAMMA_APPLY_TO_A8 -DSK_GAMMA_SRGB -DSK_GL=1 -DSK_INTERNAL -DSK_R32_SHIFT=16 -DSK_SCALAR_TO_FLOAT_EXCLUDED -DSK_SUPPORT_GPU=1 -I/home/nikson/aseprite/third_party/zlib -I/home/nikson/aseprite/build/third_party/zlib -I/home/nikson/aseprite/third_party/libpng -I/home/nikson/aseprite/build/third_party/libpng -I/home/nikson/aseprite/third_party/tinyxml2 -I/home/nikson/aseprite/third_party/TinyEXIF -I/home/nikson/aseprite/third_party/pixman/pixman -I/home/nikson/aseprite/build -I/home/nikson/aseprite/third_party/giflib -I/home/nikson/aseprite/third_party/jpeg -I/home/nikson/aseprite/third_party/curl/include -I/home/nikson/aseprite/third_party/simpleini -I/home/nikson/aseprite/laf -I/home/nikson/aseprite/build/laf -I/home/nikson/aseprite/src -I/home/nikson/deps/skia -I/home/nikson/deps/skia/third_party/externals/freetype/include -I/home/nikson/deps/skia/third_party/externals/harfbuzz/src -stdlib=libc++ -O2 -g -DNDEBUG -std=c++17 -MD -MT laf/gfx/CMakeFiles/laf-gfx.dir/packing_rects.cpp.o -MF laf/gfx/CMakeFiles/laf-gfx.dir/packing_rects.cpp.o.d -o laf/gfx/CMakeFiles/laf-gfx.dir/packing_rects.cpp.o -c /home/nikson/aseprite/laf/gfx/packing_rects.cpp
+In file included from /home/nikson/aseprite/laf/gfx/packing_rects.cpp:14:
+In file included from /home/nikson/aseprite/laf/gfx/region.h:23:
+/home/nikson/aseprite/laf/gfx/region_skia.h:16:10: fatal error: 'include/core/SkRegion.h' file not found
+   16 | #include "include/core/SkRegion.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+[4/1270] Building CXX object laf/os/CMakeFiles/laf-os.dir/dnd.cpp.o
+FAILED: laf/os/CMakeFiles/laf-os.dir/dnd.cpp.o 
+/usr/bin/clang++ -DCLIP_ENABLE_IMAGE=1 -DCMARK_STATIC_DEFINE -DHAVE_CONFIG_H -DHAVE_CONFIG_OVERRIDE_H=1 -DLAF_LINUX -DLAF_SKIA -DLAF_WITH_CLIP -DLAF_WITH_REGION -DNDEBUG -DPNG_NO_MMX_CODE -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DSK_BUILD_FOR_UNIX -DSK_ENABLE_SKSL=1 -DSK_GAMMA_APPLY_TO_A8 -DSK_GAMMA_SRGB -DSK_GL=1 -DSK_INTERNAL -DSK_R32_SHIFT=16 -DSK_SCALAR_TO_FLOAT_EXCLUDED -DSK_SUPPORT_GPU=1 -I/home/nikson/aseprite/third_party/zlib -I/home/nikson/aseprite/build/third_party/zlib -I/home/nikson/aseprite/third_party/libpng -I/home/nikson/aseprite/build/third_party/libpng -I/home/nikson/aseprite/third_party/tinyxml2 -I/home/nikson/aseprite/third_party/TinyEXIF -I/home/nikson/aseprite/third_party/pixman/pixman -I/home/nikson/aseprite/build -I/home/nikson/aseprite/third_party/giflib -I/home/nikson/aseprite/third_party/jpeg -I/home/nikson/aseprite/third_party/curl/include -I/home/nikson/aseprite/third_party/simpleini -I/home/nikson/aseprite/laf -I/home/nikson/aseprite/build/laf -I/home/nikson/aseprite/src -I/home/nikson/deps/skia -I/home/nikson/deps/skia/third_party/externals/freetype/include -I/home/nikson/deps/skia/third_party/externals/harfbuzz/src -stdlib=libc++ -O2 -g -DNDEBUG -std=c++17 -MD -MT laf/os/CMakeFiles/laf-os.dir/dnd.cpp.o -MF laf/os/CMakeFiles/laf-os.dir/dnd.cpp.o.d -o laf/os/CMakeFiles/laf-os.dir/dnd.cpp.o -c /home/nikson/aseprite/laf/os/dnd.cpp
+In file included from /home/nikson/aseprite/laf/os/dnd.cpp:13:
+In file included from /home/nikson/aseprite/laf/os/dnd.h:14:
+In file included from /home/nikson/aseprite/laf/os/surface.h:18:
+In file included from /home/nikson/aseprite/laf/os/paint.h:74:
+/home/nikson/aseprite/laf/os/skia/paint.h:13:10: fatal error: 'include/core/SkPaint.h' file not found
+   13 | #include "include/core/SkPaint.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+[5/1270] Building CXX object laf/gfx/CMakeFiles/laf-gfx.dir/region_skia.cpp.o
+FAILED: laf/gfx/CMakeFiles/laf-gfx.dir/region_skia.cpp.o 
+/usr/bin/clang++ -DCMARK_STATIC_DEFINE -DHAVE_CONFIG_H -DHAVE_CONFIG_OVERRIDE_H=1 -DLAF_LINUX -DLAF_SKIA -DLAF_WITH_REGION -DNDEBUG -DPNG_NO_MMX_CODE -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DSK_BUILD_FOR_UNIX -DSK_ENABLE_SKSL=1 -DSK_GAMMA_APPLY_TO_A8 -DSK_GAMMA_SRGB -DSK_GL=1 -DSK_INTERNAL -DSK_R32_SHIFT=16 -DSK_SCALAR_TO_FLOAT_EXCLUDED -DSK_SUPPORT_GPU=1 -I/home/nikson/aseprite/third_party/zlib -I/home/nikson/aseprite/build/third_party/zlib -I/home/nikson/aseprite/third_party/libpng -I/home/nikson/aseprite/build/third_party/libpng -I/home/nikson/aseprite/third_party/tinyxml2 -I/home/nikson/aseprite/third_party/TinyEXIF -I/home/nikson/aseprite/third_party/pixman/pixman -I/home/nikson/aseprite/build -I/home/nikson/aseprite/third_party/giflib -I/home/nikson/aseprite/third_party/jpeg -I/home/nikson/aseprite/third_party/curl/include -I/home/nikson/aseprite/third_party/simpleini -I/home/nikson/aseprite/laf -I/home/nikson/aseprite/build/laf -I/home/nikson/aseprite/src -I/home/nikson/deps/skia -I/home/nikson/deps/skia/third_party/externals/freetype/include -I/home/nikson/deps/skia/third_party/externals/harfbuzz/src -stdlib=libc++ -O2 -g -DNDEBUG -std=c++17 -MD -MT laf/gfx/CMakeFiles/laf-gfx.dir/region_skia.cpp.o -MF laf/gfx/CMakeFiles/laf-gfx.dir/region_skia.cpp.o.d -o laf/gfx/CMakeFiles/laf-gfx.dir/region_skia.cpp.o -c /home/nikson/aseprite/laf/gfx/region_skia.cpp
+In file included from /home/nikson/aseprite/laf/gfx/region_skia.cpp:11:
+In file included from /home/nikson/aseprite/laf/gfx/region.h:23:
+/home/nikson/aseprite/laf/gfx/region_skia.h:16:10: fatal error: 'include/core/SkRegion.h' file not found
+   16 | #include "include/core/SkRegion.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+[6/1270] Building CXX object laf/os/CMakeFiles/laf-os.dir/common/event_queue.cpp.o
+FAILED: laf/os/CMakeFiles/laf-os.dir/common/event_queue.cpp.o 
+/usr/bin/clang++ -DCLIP_ENABLE_IMAGE=1 -DCMARK_STATIC_DEFINE -DHAVE_CONFIG_H -DHAVE_CONFIG_OVERRIDE_H=1 -DLAF_LINUX -DLAF_SKIA -DLAF_WITH_CLIP -DLAF_WITH_REGION -DNDEBUG -DPNG_NO_MMX_CODE -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DSK_BUILD_FOR_UNIX -DSK_ENABLE_SKSL=1 -DSK_GAMMA_APPLY_TO_A8 -DSK_GAMMA_SRGB -DSK_GL=1 -DSK_INTERNAL -DSK_R32_SHIFT=16 -DSK_SCALAR_TO_FLOAT_EXCLUDED -DSK_SUPPORT_GPU=1 -I/home/nikson/aseprite/third_party/zlib -I/home/nikson/aseprite/build/third_party/zlib -I/home/nikson/aseprite/third_party/libpng -I/home/nikson/aseprite/build/third_party/libpng -I/home/nikson/aseprite/third_party/tinyxml2 -I/home/nikson/aseprite/third_party/TinyEXIF -I/home/nikson/aseprite/third_party/pixman/pixman -I/home/nikson/aseprite/build -I/home/nikson/aseprite/third_party/giflib -I/home/nikson/aseprite/third_party/jpeg -I/home/nikson/aseprite/third_party/curl/include -I/home/nikson/aseprite/third_party/simpleini -I/home/nikson/aseprite/laf -I/home/nikson/aseprite/build/laf -I/home/nikson/aseprite/src -I/home/nikson/deps/skia -I/home/nikson/deps/skia/third_party/externals/freetype/include -I/home/nikson/deps/skia/third_party/externals/harfbuzz/src -stdlib=libc++ -O2 -g -DNDEBUG -std=c++17 -MD -MT laf/os/CMakeFiles/laf-os.dir/common/event_queue.cpp.o -MF laf/os/CMakeFiles/laf-os.dir/common/event_queue.cpp.o.d -o laf/os/CMakeFiles/laf-os.dir/common/event_queue.cpp.o -c /home/nikson/aseprite/laf/os/common/event_queue.cpp
+In file included from /home/nikson/aseprite/laf/os/common/event_queue.cpp:17:
+In file included from /home/nikson/aseprite/laf/os/x11/event_queue.h:13:
+In file included from /home/nikson/aseprite/laf/os/event.h:17:
+In file included from /home/nikson/aseprite/laf/os/window.h:15:
+In file included from /home/nikson/aseprite/laf/os/dnd.h:14:
+In file included from /home/nikson/aseprite/laf/os/surface.h:18:
+In file included from /home/nikson/aseprite/laf/os/paint.h:74:
+/home/nikson/aseprite/laf/os/skia/paint.h:13:10: fatal error: 'include/core/SkPaint.h' file not found
+   13 | #include "include/core/SkPaint.h"
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+ninja: build stopped: subcommand failed.
